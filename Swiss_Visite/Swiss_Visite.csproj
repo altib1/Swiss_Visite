@@ -94,6 +94,9 @@
     <Compile Include="MEDICAMENT.cs">
       <DependentUpon>Swiss_Visit.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model.cs" />
+    <Compile Include="ModelMission1.cs" />
+    <Compile Include="ModelMission3.cs" />
     <Compile Include="MOTIF.cs">
       <DependentUpon>Swiss_Visit.tt</DependentUpon>
     </Compile>
