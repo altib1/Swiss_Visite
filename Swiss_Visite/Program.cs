@@ -16,7 +16,8 @@ namespace Swiss_Visite
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Model.init();
+            Application.Run(new frmConexion());
         }
     }
 }
