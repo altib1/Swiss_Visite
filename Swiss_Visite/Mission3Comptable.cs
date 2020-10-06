@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Swiss_Visite
 {
-    public partial class Form2 : Form
+    public partial class Mission3Comptable : Form
     {
-        public Form2()
+        public Mission3Comptable()
         {
             InitializeComponent();
         }

@@ -33,7 +33,6 @@
             this.txtIdentifiant = new System.Windows.Forms.TextBox();
             this.txtMotdepasse = new System.Windows.Forms.TextBox();
             this.btnValider = new System.Windows.Forms.Button();
-            this.btnOk = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -79,22 +78,13 @@
             // 
             // btnValider
             // 
-            this.btnValider.Location = new System.Drawing.Point(68, 251);
+            this.btnValider.Location = new System.Drawing.Point(149, 239);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(75, 23);
+            this.btnValider.Size = new System.Drawing.Size(116, 36);
             this.btnValider.TabIndex = 4;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = true;
             this.btnValider.Click += new System.EventHandler(this.BtnValider_Click);
-            // 
-            // btnOk
-            // 
-            this.btnOk.Location = new System.Drawing.Point(190, 251);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 23);
-            this.btnOk.TabIndex = 5;
-            this.btnOk.Text = "OK";
-            this.btnOk.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -116,7 +106,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(374, 360);
-            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.panel1);
             this.Name = "frmConexion";
@@ -135,7 +124,6 @@
         private System.Windows.Forms.TextBox txtIdentifiant;
         private System.Windows.Forms.TextBox txtMotdepasse;
         private System.Windows.Forms.Button btnValider;
-        private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Panel panel1;
     }
 }
