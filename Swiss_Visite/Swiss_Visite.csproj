@@ -64,11 +64,11 @@
     <Compile Include="fichefrais.cs">
       <DependentUpon>Swiss_Visit.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="RapportVisite.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="RapportVisite.Designer.cs">
+      <DependentUpon>RapportVisite.cs</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
@@ -147,8 +147,8 @@
     <Compile Include="Visiteur.cs">
       <DependentUpon>Swiss_Visit.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="RapportVisite.resx">
+      <DependentUpon>RapportVisite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConexion.resx">
       <DependentUpon>frmConexion.cs</DependentUpon>
