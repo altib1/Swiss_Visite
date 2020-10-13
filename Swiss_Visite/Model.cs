@@ -13,6 +13,7 @@ namespace Swiss_Visite
         private static Visiteur utilisateurConnecte;
         private static bool connexionValide;
         public static BALNEntities maConnexion;
+        public static string idclient;
 
         public static Visiteur UtilisateurConnecte { get => utilisateurConnecte; set => utilisateurConnecte = value; }
         public static bool ConnexionValide { get => connexionValide; set => connexionValide = value; }
@@ -47,7 +48,7 @@ namespace Swiss_Visite
         }
         public static string validConnexion(string id, string mp)
         {
-          
+           
             string message = "";
             Visiteur v1 = rechercheVisiteur(id);
             if ( v1 != null)
@@ -56,7 +57,8 @@ namespace Swiss_Visite
                 {
                     UtilisateurConnecte = v1;
                     connexionValide = true;
-                    
+                    idclient = id;
+
                 }
             }
           

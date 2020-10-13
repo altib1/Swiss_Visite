@@ -35,6 +35,13 @@
             this.lblLibelle = new System.Windows.Forms.Label();
             this.lblAutre = new System.Windows.Forms.Label();
             this.tblVisiteur = new System.Windows.Forms.TableLayoutPanel();
+            this.txtTotalVehicule = new System.Windows.Forms.TextBox();
+            this.txtMontantVehicule = new System.Windows.Forms.TextBox();
+            this.txtQVehicule = new System.Windows.Forms.TextBox();
+            this.txtTotalMidi = new System.Windows.Forms.TextBox();
+            this.txtMontantMidi = new System.Windows.Forms.TextBox();
+            this.txtQMidi = new System.Windows.Forms.TextBox();
+            this.txtTotalNuit = new System.Windows.Forms.TextBox();
             this.lnlNuite = new System.Windows.Forms.Label();
             this.lblQuantite = new System.Windows.Forms.Label();
             this.lblFrais = new System.Windows.Forms.Label();
@@ -42,6 +49,8 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblRepasMidi = new System.Windows.Forms.Label();
             this.lblKilometrage = new System.Windows.Forms.Label();
+            this.txtQNuit = new System.Windows.Forms.TextBox();
+            this.txtMontantNuit = new System.Windows.Forms.TextBox();
             this.dtMois = new System.Windows.Forms.DateTimePicker();
             this.lblMois = new System.Windows.Forms.Label();
             this.txtNom = new System.Windows.Forms.TextBox();
@@ -52,15 +61,6 @@
             this.lblTitre = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtQNuit = new System.Windows.Forms.TextBox();
-            this.txtMontantNuit = new System.Windows.Forms.TextBox();
-            this.txtTotalNuit = new System.Windows.Forms.TextBox();
-            this.txtQMidi = new System.Windows.Forms.TextBox();
-            this.txtMontantMidi = new System.Windows.Forms.TextBox();
-            this.txtTotalMidi = new System.Windows.Forms.TextBox();
-            this.txtQVehicule = new System.Windows.Forms.TextBox();
-            this.txtMontantVehicule = new System.Windows.Forms.TextBox();
-            this.txtTotalVehicule = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tblVisiteur.SuspendLayout();
@@ -92,7 +92,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.19549F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.80451F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
             this.tableLayoutPanel1.Controls.Add(this.lblMontantAutre, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblDateAutre, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblLibelle, 1, 0);
@@ -113,7 +113,7 @@
             this.lblMontantAutre.AutoSize = true;
             this.lblMontantAutre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontantAutre.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblMontantAutre.Location = new System.Drawing.Point(538, 3);
+            this.lblMontantAutre.Location = new System.Drawing.Point(534, 3);
             this.lblMontantAutre.Name = "lblMontantAutre";
             this.lblMontantAutre.Size = new System.Drawing.Size(62, 16);
             this.lblMontantAutre.TabIndex = 12;
@@ -138,9 +138,9 @@
             this.lblLibelle.AutoSize = true;
             this.lblLibelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLibelle.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblLibelle.Location = new System.Drawing.Point(157, 3);
+            this.lblLibelle.Location = new System.Drawing.Point(156, 3);
             this.lblLibelle.Name = "lblLibelle";
-            this.lblLibelle.Size = new System.Drawing.Size(372, 31);
+            this.lblLibelle.Size = new System.Drawing.Size(369, 31);
             this.lblLibelle.TabIndex = 13;
             this.lblLibelle.Text = "Libelle";
             this.lblLibelle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -163,7 +163,7 @@
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.1282F));
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.8718F));
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 298F));
-            this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
+            this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
             this.tblVisiteur.Controls.Add(this.txtTotalVehicule, 3, 3);
             this.tblVisiteur.Controls.Add(this.txtMontantVehicule, 2, 3);
             this.tblVisiteur.Controls.Add(this.txtQVehicule, 1, 3);
@@ -191,6 +191,55 @@
             this.tblVisiteur.Size = new System.Drawing.Size(655, 129);
             this.tblVisiteur.TabIndex = 9;
             // 
+            // txtTotalVehicule
+            // 
+            this.txtTotalVehicule.Location = new System.Drawing.Point(539, 96);
+            this.txtTotalVehicule.Name = "txtTotalVehicule";
+            this.txtTotalVehicule.Size = new System.Drawing.Size(101, 20);
+            this.txtTotalVehicule.TabIndex = 24;
+            // 
+            // txtMontantVehicule
+            // 
+            this.txtMontantVehicule.Location = new System.Drawing.Point(238, 96);
+            this.txtMontantVehicule.Name = "txtMontantVehicule";
+            this.txtMontantVehicule.Size = new System.Drawing.Size(291, 20);
+            this.txtMontantVehicule.TabIndex = 23;
+            // 
+            // txtQVehicule
+            // 
+            this.txtQVehicule.Location = new System.Drawing.Point(158, 96);
+            this.txtQVehicule.Name = "txtQVehicule";
+            this.txtQVehicule.Size = new System.Drawing.Size(71, 20);
+            this.txtQVehicule.TabIndex = 22;
+            // 
+            // txtTotalMidi
+            // 
+            this.txtTotalMidi.Location = new System.Drawing.Point(539, 64);
+            this.txtTotalMidi.Name = "txtTotalMidi";
+            this.txtTotalMidi.Size = new System.Drawing.Size(101, 20);
+            this.txtTotalMidi.TabIndex = 21;
+            // 
+            // txtMontantMidi
+            // 
+            this.txtMontantMidi.Location = new System.Drawing.Point(238, 64);
+            this.txtMontantMidi.Name = "txtMontantMidi";
+            this.txtMontantMidi.Size = new System.Drawing.Size(291, 20);
+            this.txtMontantMidi.TabIndex = 20;
+            // 
+            // txtQMidi
+            // 
+            this.txtQMidi.Location = new System.Drawing.Point(158, 64);
+            this.txtQMidi.Name = "txtQMidi";
+            this.txtQMidi.Size = new System.Drawing.Size(71, 20);
+            this.txtQMidi.TabIndex = 19;
+            // 
+            // txtTotalNuit
+            // 
+            this.txtTotalNuit.Location = new System.Drawing.Point(539, 42);
+            this.txtTotalNuit.Name = "txtTotalNuit";
+            this.txtTotalNuit.Size = new System.Drawing.Size(101, 20);
+            this.txtTotalNuit.TabIndex = 18;
+            // 
             // lnlNuite
             // 
             this.lnlNuite.AutoSize = true;
@@ -206,7 +255,7 @@
             this.lblQuantite.AutoSize = true;
             this.lblQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantite.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblQuantite.Location = new System.Drawing.Point(161, 8);
+            this.lblQuantite.Location = new System.Drawing.Point(158, 8);
             this.lblQuantite.Name = "lblQuantite";
             this.lblQuantite.Size = new System.Drawing.Size(65, 16);
             this.lblQuantite.TabIndex = 11;
@@ -231,7 +280,7 @@
             this.lblMontatnt.AutoSize = true;
             this.lblMontatnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontatnt.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblMontatnt.Location = new System.Drawing.Point(242, 8);
+            this.lblMontatnt.Location = new System.Drawing.Point(238, 8);
             this.lblMontatnt.Name = "lblMontatnt";
             this.lblMontatnt.Size = new System.Drawing.Size(292, 28);
             this.lblMontatnt.TabIndex = 12;
@@ -243,7 +292,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblTotal.Location = new System.Drawing.Point(543, 8);
+            this.lblTotal.Location = new System.Drawing.Point(539, 8);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(44, 16);
             this.lblTotal.TabIndex = 13;
@@ -268,6 +317,20 @@
             this.lblKilometrage.Size = new System.Drawing.Size(80, 16);
             this.lblKilometrage.TabIndex = 15;
             this.lblKilometrage.Text = "Kilometrage";
+            // 
+            // txtQNuit
+            // 
+            this.txtQNuit.Location = new System.Drawing.Point(158, 42);
+            this.txtQNuit.Name = "txtQNuit";
+            this.txtQNuit.Size = new System.Drawing.Size(71, 20);
+            this.txtQNuit.TabIndex = 16;
+            // 
+            // txtMontantNuit
+            // 
+            this.txtMontantNuit.Location = new System.Drawing.Point(238, 42);
+            this.txtMontantNuit.Name = "txtMontantNuit";
+            this.txtMontantNuit.Size = new System.Drawing.Size(291, 20);
+            this.txtMontantNuit.TabIndex = 17;
             // 
             // dtMois
             // 
@@ -366,69 +429,6 @@
             this.label2.Size = new System.Drawing.Size(39, 16);
             this.label2.TabIndex = 16;
             this.label2.Text = "Total";
-            // 
-            // txtQNuit
-            // 
-            this.txtQNuit.Location = new System.Drawing.Point(161, 42);
-            this.txtQNuit.Name = "txtQNuit";
-            this.txtQNuit.Size = new System.Drawing.Size(72, 20);
-            this.txtQNuit.TabIndex = 16;
-            // 
-            // txtMontantNuit
-            // 
-            this.txtMontantNuit.Location = new System.Drawing.Point(242, 42);
-            this.txtMontantNuit.Name = "txtMontantNuit";
-            this.txtMontantNuit.Size = new System.Drawing.Size(291, 20);
-            this.txtMontantNuit.TabIndex = 17;
-            // 
-            // txtTotalNuit
-            // 
-            this.txtTotalNuit.Location = new System.Drawing.Point(543, 42);
-            this.txtTotalNuit.Name = "txtTotalNuit";
-            this.txtTotalNuit.Size = new System.Drawing.Size(101, 20);
-            this.txtTotalNuit.TabIndex = 18;
-            // 
-            // txtQMidi
-            // 
-            this.txtQMidi.Location = new System.Drawing.Point(161, 64);
-            this.txtQMidi.Name = "txtQMidi";
-            this.txtQMidi.Size = new System.Drawing.Size(72, 20);
-            this.txtQMidi.TabIndex = 19;
-            // 
-            // txtMontantMidi
-            // 
-            this.txtMontantMidi.Location = new System.Drawing.Point(242, 64);
-            this.txtMontantMidi.Name = "txtMontantMidi";
-            this.txtMontantMidi.Size = new System.Drawing.Size(291, 20);
-            this.txtMontantMidi.TabIndex = 20;
-            // 
-            // txtTotalMidi
-            // 
-            this.txtTotalMidi.Location = new System.Drawing.Point(543, 64);
-            this.txtTotalMidi.Name = "txtTotalMidi";
-            this.txtTotalMidi.Size = new System.Drawing.Size(101, 20);
-            this.txtTotalMidi.TabIndex = 21;
-            // 
-            // txtQVehicule
-            // 
-            this.txtQVehicule.Location = new System.Drawing.Point(161, 96);
-            this.txtQVehicule.Name = "txtQVehicule";
-            this.txtQVehicule.Size = new System.Drawing.Size(72, 20);
-            this.txtQVehicule.TabIndex = 22;
-            // 
-            // txtMontantVehicule
-            // 
-            this.txtMontantVehicule.Location = new System.Drawing.Point(242, 96);
-            this.txtMontantVehicule.Name = "txtMontantVehicule";
-            this.txtMontantVehicule.Size = new System.Drawing.Size(291, 20);
-            this.txtMontantVehicule.TabIndex = 23;
-            // 
-            // txtTotalVehicule
-            // 
-            this.txtTotalVehicule.Location = new System.Drawing.Point(543, 96);
-            this.txtTotalVehicule.Name = "txtTotalVehicule";
-            this.txtTotalVehicule.Size = new System.Drawing.Size(101, 20);
-            this.txtTotalVehicule.TabIndex = 24;
             // 
             // Mission3Comptable
             // 
