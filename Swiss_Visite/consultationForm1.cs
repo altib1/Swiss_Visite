@@ -92,6 +92,8 @@ namespace Swiss_Visite
             CP.Text = v.cp;
             Ville.Text = v.ville;
             DateEmbauche.Text = v.dateEmbauche;
+            
+   
 
             
             

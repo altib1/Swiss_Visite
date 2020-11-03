@@ -43,6 +43,8 @@
             this.DateEmbauche = new System.Windows.Forms.TextBox();
             this.btnModif = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
+            this.dgvRegion = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegion)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -189,11 +191,20 @@
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.Btn_Click);
             // 
+            // dgvRegion
+            // 
+            this.dgvRegion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegion.Location = new System.Drawing.Point(416, 35);
+            this.dgvRegion.Name = "dgvRegion";
+            this.dgvRegion.Size = new System.Drawing.Size(322, 150);
+            this.dgvRegion.TabIndex = 15;
+            // 
             // consultationForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvRegion);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnModif);
             this.Controls.Add(this.DateEmbauche);
@@ -212,6 +223,7 @@
             this.Name = "consultationForm1";
             this.Text = "consultationForm1";
             this.Load += new System.EventHandler(this.ConsultationForm1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,5 +246,6 @@
         private System.Windows.Forms.TextBox DateEmbauche;
         private System.Windows.Forms.Button btnModif;
         private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.DataGridView dgvRegion;
     }
 }
