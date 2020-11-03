@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="consultationForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="consultationForm1.Designer.cs">
+      <DependentUpon>consultationForm1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Etat.cs">
       <DependentUpon>Swiss_Visit.tt</DependentUpon>
     </Compile>
@@ -63,6 +69,12 @@
     </Compile>
     <Compile Include="fichefrais.cs">
       <DependentUpon>Swiss_Visit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuPrincipale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuPrincipale.Designer.cs">
+      <DependentUpon>FormMenuPrincipale.cs</DependentUpon>
     </Compile>
     <Compile Include="RapportVisite.cs">
       <SubType>Form</SubType>
@@ -147,6 +159,12 @@
     <Compile Include="Visiteur.cs">
       <DependentUpon>Swiss_Visit.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="consultationForm1.resx">
+      <DependentUpon>consultationForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuPrincipale.resx">
+      <DependentUpon>FormMenuPrincipale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RapportVisite.resx">
       <DependentUpon>RapportVisite.cs</DependentUpon>
     </EmbeddedResource>
