@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Swiss_Visite
 {
-    class ModelMission3
+    public static class ModelMission3
     {
        
         public static BALNEntities maConnexion;
@@ -21,6 +21,14 @@ namespace Swiss_Visite
             
         }
 
-       
+        public static FraisForfait rechercheFraisForfait(string vid)
+        {
+
+            var LQuery = maConnexion.FraisForfait.ToList()
+                           .Where(x => x.id == vid);
+
+            return LQuery.ToList()[0];
+        }
+        
     }
 }

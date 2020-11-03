@@ -38,6 +38,7 @@
         <AssociationConnector Association="BALNModel.FK_VISITEUR" ManuallyRouted="false" />
         <AssociationConnector Association="BALNModel.FK_VISITEURSECTEUR" ManuallyRouted="false" />
         <AssociationConnector Association="BALNModel.Travailler" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BALNModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

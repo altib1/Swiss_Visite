@@ -53,9 +53,34 @@ namespace Swiss_Visite
             // bsMois.DataSource = DateTime.Today.Month;
             // dtMois.Value.Month = bsMois.DataSource;
             dtMois.Value = DateTime.Today;
+
+            bsNuit.DataSource = ModelMission3.rechercheFraisForfait("NUI").montant.ToString();
+            txtMontantNuit.Text = bsNuit.DataSource.ToString();
+
+
         }
 
         private void DgvForfait_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void TxtQNuit_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TblVisiteur_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void LblKilometrage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

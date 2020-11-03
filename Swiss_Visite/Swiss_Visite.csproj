@@ -150,6 +150,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Swiss_Visit.edmx</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Swiss_Visit.tt</DependentUpon>
+    </Compile>
     <Compile Include="Visiteur.cs">
       <DependentUpon>Swiss_Visit.tt</DependentUpon>
     </Compile>

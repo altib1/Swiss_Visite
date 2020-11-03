@@ -23,6 +23,7 @@ namespace Swiss_Visite
         public string id { get; set; }
         public string libelle { get; set; }
         public Nullable<decimal> montant { get; set; }
+        public Nullable<bool> Kilometrique { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LigneFraisForfait> LigneFraisForfait { get; set; }
