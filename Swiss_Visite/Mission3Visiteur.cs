@@ -53,11 +53,23 @@ namespace Swiss_Visite
             // bsMois.DataSource = DateTime.Today.Month;
             // dtMois.Value.Month = bsMois.DataSource;
             dtMois.Value = DateTime.Today;
+            //frais une Nuite
+            bsNuit.DataSource = ModelMission3.rechercheFraisForfait("NUI");
 
-            bsNuit.DataSource = ModelMission3.rechercheFraisForfait("NUI").montant.ToString();
-            txtMontantNuit.Text = bsNuit.DataSource.ToString();
+            txtMontantNuit.Text = ((FraisForfait)bsNuit[0]).montant.ToString();
+            //frais repas midi
+            bsMidi.DataSource = ModelMission3.rechercheFraisForfait("REM");
 
+            txtMontantMidi.Text = ((FraisForfait)bsMidi[0]).montant.ToString();
+            //frais repas soir
+            bsSoir.DataSource = ModelMission3.rechercheFraisForfait("RES");
 
+            txtMontantSoir.Text = ((FraisForfait)bsSoir[0]).montant.ToString();
+
+            cboModeDeTransport.ValueMember = "id";//permet de stocker l'identifiant
+            cboModeDeTransport.DisplayMember = "libvehicule";
+            cboModeDeTransport.DataSource = ModelMission3.listefraisforfait();
+            cboModeDeTransport.DataSource = bsModedetransport;
         }
 
         private void DgvForfait_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -29,6 +29,11 @@ namespace Swiss_Visite
 
             return LQuery.ToList()[0];
         }
-        
+
+        public static List<FraisForfait> listefraisforfait()
+        {
+            return maConnexion.FraisForfait.ToList();
+        }
+
     }
 }
