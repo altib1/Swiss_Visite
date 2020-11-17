@@ -16,5 +16,10 @@ namespace Swiss_Visite
         {
             InitializeComponent();
         }
+
+        private void LblTitre_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

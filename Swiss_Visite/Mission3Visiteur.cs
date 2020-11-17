@@ -67,9 +67,31 @@ namespace Swiss_Visite
             txtMontantSoir.Text = ((FraisForfait)bsSoir[0]).montant.ToString();
 
             cboModeDeTransport.ValueMember = "id";//permet de stocker l'identifiant
-            cboModeDeTransport.DisplayMember = "libvehicule";
-            cboModeDeTransport.DataSource = ModelMission3.listefraisforfait();
+            cboModeDeTransport.DisplayMember = "libelle";
+            bsModedetransport.DataSource = ModelMission3.recherchefraiskilometrique();
             cboModeDeTransport.DataSource = bsModedetransport;
+
+
+            bsdgvtransport.DataSource = ModelMission3.recherchefichefrais(Model.idclient);
+            if(bsdgvtransport == null)
+            {
+                fichefrais visiteurchoisi = new fichefrais();
+                visiteurchoisi.idVisiteur = Model.idclient.ToString();
+                visiteurchoisi.mois = DateTime.Now.Month.ToString();
+                visiteurchoisi.nbJustificatifs = 0;
+                visiteurchoisi.montantValide = 0;
+                visiteurchoisi.dateModif = DateTime.Now;
+                visiteurchoisi.idEtat = "0";
+
+
+               
+                dgvfraiskilometriques.DataSource = bsdgvtransport;
+
+            }
+            else
+            {
+                dgvfraiskilometriques.DataSource = bsdgvtransport;
+            }
         }
 
         private void DgvForfait_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -95,6 +117,25 @@ namespace Swiss_Visite
         private void DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void CboModeDeTransport_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnAjoutertrans_Click(object sender, EventArgs e)
+        {
+            if (dgvfraiskilometriques.Rows.Count > 0)
+            {
+
+                dgvfraiskilometriques[1, dgvfraiskilometriques.Rows.Count+1].Value = cboModeDeTransport.SelectedItem;
+            }
+            else
+            {
+                dgvfraiskilometriques[1, 0].Value = cboModeDeTransport.SelectedItem;
+            }
+           
         }
     }
 }
