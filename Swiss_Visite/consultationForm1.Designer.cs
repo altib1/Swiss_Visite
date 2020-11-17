@@ -44,6 +44,7 @@
             this.btnModif = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.dgvRegion = new System.Windows.Forms.DataGridView();
+            this.btnMotDePasse = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,11 +200,22 @@
             this.dgvRegion.Size = new System.Drawing.Size(322, 150);
             this.dgvRegion.TabIndex = 15;
             // 
+            // btnMotDePasse
+            // 
+            this.btnMotDePasse.Location = new System.Drawing.Point(277, 318);
+            this.btnMotDePasse.Name = "btnMotDePasse";
+            this.btnMotDePasse.Size = new System.Drawing.Size(168, 23);
+            this.btnMotDePasse.TabIndex = 16;
+            this.btnMotDePasse.Text = "Modifier le mot de passe";
+            this.btnMotDePasse.UseVisualStyleBackColor = true;
+            this.btnMotDePasse.Click += new System.EventHandler(this.BtnMotDePasse_Click);
+            // 
             // consultationForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnMotDePasse);
             this.Controls.Add(this.dgvRegion);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnModif);
@@ -247,5 +259,6 @@
         private System.Windows.Forms.Button btnModif;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.DataGridView dgvRegion;
+        private System.Windows.Forms.Button btnMotDePasse;
     }
 }

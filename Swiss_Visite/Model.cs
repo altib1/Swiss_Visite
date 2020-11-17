@@ -105,5 +105,29 @@ namespace Swiss_Visite
 
 
         }
+        public static bool ModifMP(string pw)
+        {
+
+            bool vretour = true;
+            try
+            {
+                pw = GetMd5Hash(pw);
+                utilisateurConnecte.password = pw;
+                maConnexion.SaveChanges();
+
+
+
+            }
+
+
+            
+
+             catch (Exception ex)
+            {
+                vretour = false;
+                MessageBox.Show("Erreur");
+            }
+            return vretour;
+        }
     }
 }

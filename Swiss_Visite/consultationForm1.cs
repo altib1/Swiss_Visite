@@ -119,5 +119,12 @@ namespace Swiss_Visite
             string dateEmbauche = DateEmbauche.Text.Trim();
             Model.Modif(nom, prenom, rue, cp, ville, dateEmbauche);
         }
+
+        private void BtnMotDePasse_Click(object sender, EventArgs e)
+        {
+           pwModif modifPW=new pwModif();
+            modifPW.Show();
+
+        }
     }
 }
