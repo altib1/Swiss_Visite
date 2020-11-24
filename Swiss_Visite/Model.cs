@@ -129,5 +129,13 @@ namespace Swiss_Visite
             }
             return vretour;
         }
+
+        public static List<Region> listeregion()
+        {
+            return maConnexion.Region.ToList();
+        }
+        
+
+
     }
 }

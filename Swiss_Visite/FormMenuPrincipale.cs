@@ -48,5 +48,17 @@ namespace Swiss_Visite
             consultationForm1 consult = new consultationForm1();
             consult.Show();
         }
+
+        private void REGIONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ParRégionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegion region = new frmRegion();
+            region.Show();
+
+        }
     }
 }
