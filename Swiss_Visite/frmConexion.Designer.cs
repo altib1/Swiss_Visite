@@ -68,6 +68,7 @@
             this.txtIdentifiant.Name = "txtIdentifiant";
             this.txtIdentifiant.Size = new System.Drawing.Size(100, 20);
             this.txtIdentifiant.TabIndex = 2;
+            this.txtIdentifiant.Text = "veynde";
             // 
             // txtMotdepasse
             // 
@@ -76,6 +77,7 @@
             this.txtMotdepasse.PasswordChar = '*';
             this.txtMotdepasse.Size = new System.Drawing.Size(100, 20);
             this.txtMotdepasse.TabIndex = 3;
+            this.txtMotdepasse.Text = "i7sn3";
             // 
             // btnValider
             // 

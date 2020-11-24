@@ -92,11 +92,46 @@ namespace Swiss_Visite
             CP.Text = v.cp;
             Ville.Text = v.ville;
             DateEmbauche.Text = v.dateEmbauche;
-            
-   
+
+
+            dgvRegion.DataSource = Model.UtilisateurConnecte.Region1.ToList();
+            dgvSecteur.DataSource = Model.UtilisateurConnecte.Secteur.ToList();
 
             
-            
+            dgvRegion1.DataSource = Model.UtilisateurConnecte.Region.ToList();
+
+
+            for (int i = 0; i < dgvRegion.ColumnCount; i++)
+            {
+                dgvRegion.Columns[i].Visible = false;
+            }
+            dgvRegion.Columns[1].Visible = true;
+
+            dgvRegion.Columns[1].HeaderText = "Région(s) rattachée(s)";
+
+            for (int i = 0; i < dgvSecteur.ColumnCount; i++)
+            {
+                dgvSecteur.Columns[i].Visible = false;
+            }
+            dgvSecteur.Columns[1].Visible = true;
+            dgvSecteur.Columns[1].HeaderText = "Secteur(s) (s)";
+
+            for (int i = 0; i < dgvRegion1.ColumnCount; i++)
+            {
+                dgvRegion1.Columns[i].Visible = false;
+            }
+            dgvRegion1.Columns[1].Visible = true;
+
+            dgvRegion1.Columns[1].HeaderText = "Région(s) ";
+            if(dgvRegion.RowCount==0)
+            {
+
+                dgvRegion.Visible= false;
+
+            }
+
+
+
         }
 
         private void BtnModif_Click(object sender, EventArgs e)
@@ -124,6 +159,11 @@ namespace Swiss_Visite
         {
            pwModif modifPW=new pwModif();
             modifPW.Show();
+
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

@@ -45,7 +45,11 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.dgvRegion = new System.Windows.Forms.DataGridView();
             this.btnMotDePasse = new System.Windows.Forms.Button();
+            this.dgvSecteur = new System.Windows.Forms.DataGridView();
+            this.dgvRegion1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSecteur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegion1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -195,9 +199,9 @@
             // dgvRegion
             // 
             this.dgvRegion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegion.Location = new System.Drawing.Point(416, 35);
+            this.dgvRegion.Location = new System.Drawing.Point(257, 38);
             this.dgvRegion.Name = "dgvRegion";
-            this.dgvRegion.Size = new System.Drawing.Size(322, 150);
+            this.dgvRegion.Size = new System.Drawing.Size(169, 150);
             this.dgvRegion.TabIndex = 15;
             // 
             // btnMotDePasse
@@ -210,11 +214,29 @@
             this.btnMotDePasse.UseVisualStyleBackColor = true;
             this.btnMotDePasse.Click += new System.EventHandler(this.BtnMotDePasse_Click);
             // 
+            // dgvSecteur
+            // 
+            this.dgvSecteur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSecteur.Location = new System.Drawing.Point(471, 38);
+            this.dgvSecteur.Name = "dgvSecteur";
+            this.dgvSecteur.Size = new System.Drawing.Size(240, 150);
+            this.dgvSecteur.TabIndex = 17;
+            // 
+            // dgvRegion1
+            // 
+            this.dgvRegion1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegion1.Location = new System.Drawing.Point(379, 209);
+            this.dgvRegion1.Name = "dgvRegion1";
+            this.dgvRegion1.Size = new System.Drawing.Size(280, 87);
+            this.dgvRegion1.TabIndex = 18;
+            // 
             // consultationForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvRegion1);
+            this.Controls.Add(this.dgvSecteur);
             this.Controls.Add(this.btnMotDePasse);
             this.Controls.Add(this.dgvRegion);
             this.Controls.Add(this.btnOk);
@@ -236,6 +258,8 @@
             this.Text = "consultationForm1";
             this.Load += new System.EventHandler(this.ConsultationForm1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSecteur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegion1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,5 +284,7 @@
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.DataGridView dgvRegion;
         private System.Windows.Forms.Button btnMotDePasse;
+        private System.Windows.Forms.DataGridView dgvSecteur;
+        private System.Windows.Forms.DataGridView dgvRegion1;
     }
 }

@@ -19,8 +19,16 @@ namespace Swiss_Visite
             return utilisateurConnecte;
 
         }
-        public static Visiteur UtilisateurConnecte { get => utilisateurConnecte; set => utilisateurConnecte = value; }
-        public static bool ConnexionValide { get => connexionValide; set => connexionValide = value; }
+        public static Visiteur UtilisateurConnecte
+        {
+           get => utilisateurConnecte;
+           set => utilisateurConnecte = value;
+        }
+        public static bool ConnexionValide
+        {
+            get => connexionValide;
+            set => connexionValide = value;
+        }
 
         public static void init()
         {
@@ -135,7 +143,7 @@ namespace Swiss_Visite
             return maConnexion.Region.ToList();
         }
         
-
+       
 
     }
 }

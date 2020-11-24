@@ -30,6 +30,10 @@ namespace Swiss_Visite
             bsRegion.DataSource = Model.listeregion();
             cboRegion.DataSource = bsRegion;
 
+
+
+
+
         }
 
         private void BsRegion_CurrentChanged(object sender, EventArgs e)
@@ -38,7 +42,7 @@ namespace Swiss_Visite
             bsVisiteur.DataSource = ((Region)bsRegion.Current).Visiteur1.ToList();
                 dgvVisiteur.DataSource = bsVisiteur;
 
-
+            
 
 
                 for (int i = 0; i < dgvVisiteur.ColumnCount; i++)
@@ -50,12 +54,25 @@ namespace Swiss_Visite
                 dgvVisiteur.Columns["prenom"].Visible = true;
                 dgvVisiteur.Columns["prenom"].HeaderText = "PRENOM";
                 dgvVisiteur.ClearSelection();
+            txtResp.Text=((Region)bsRegion.Current).Visiteur.nom;
+            prenomResp.Text = ((Region)bsRegion.Current).Visiteur.prenom;
 
 
-              
 
 
 
+
+
+
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DgvVisiteur_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
