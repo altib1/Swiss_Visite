@@ -77,5 +77,24 @@ namespace Swiss_Visite
                 return null;
             }
         }
+
+        public static fichefrais modifierfichefrais(string vid, string mois)
+        {
+
+            var LQuery = maConnexion.fichefrais.ToList()
+
+                           .Where(x => x.idVisiteur == vid)
+                           .Where(x => x.mois == DateTime.Now.Month.ToString());
+
+            // .Select(x => new {x.id, x.libelle });
+            if (LQuery.ToList().Count > 0)
+            {
+                return LQuery.ToList()[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

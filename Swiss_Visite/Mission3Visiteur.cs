@@ -72,7 +72,7 @@ namespace Swiss_Visite
             cboModeDeTransport.DataSource = bsModedetransport;
 
 
-            bsdgvtransport.DataSource = ModelMission3.recherchefichefrais(Model.idclient);
+            bsdgvtransport.DataSource = ModelMission3.ajouterfichefrais(Model.idclient,DateTime.Now.Month.ToString());
             if(bsdgvtransport == null)
             {
                 fichefrais visiteurchoisi = new fichefrais();
@@ -85,13 +85,10 @@ namespace Swiss_Visite
 
 
                
-                dgvfraiskilometriques.DataSource = bsdgvtransport;
+              
 
             }
-            else
-            {
-                dgvfraiskilometriques.DataSource = bsdgvtransport;
-            }
+           
         }
 
         private void DgvForfait_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -126,16 +123,46 @@ namespace Swiss_Visite
 
         private void BtnAjoutertrans_Click(object sender, EventArgs e)
         {
-            if (dgvfraiskilometriques.Rows.Count > 0)
+            if (dgvfraiskilometriques.RowCount  > 0)
             {
+                string a = ((FraisForfait)bsModedetransport.Current).montant.ToString();
+                double b = (double.Parse(txtQuantiteKilometres.Text) * double.Parse(a));
+                string[] row = new string[] { txtQuantiteKilometres.Text, cboModeDeTransport.Text, b.ToString() };
+                dgvfraiskilometriques.Rows.Add(row);
+                
 
-                dgvfraiskilometriques[1, dgvfraiskilometriques.Rows.Count+1].Value = cboModeDeTransport.SelectedItem;
+
+               // dgvfraiskilometriques[1, dgvfraiskilometriques.RowCount+1].Value = cboModeDeTransport.SelectedValue;
             }
             else
             {
                 dgvfraiskilometriques[1, 0].Value = cboModeDeTransport.SelectedItem;
             }
            
+        }
+
+        private void BtnModifier_Click(object sender, EventArgs e)
+        {
+            string a = ((FraisForfait)bsModedetransport.Current).montant.ToString();
+            double b = (double.Parse(txtQuantiteKilometres.Text) * double.Parse(a));
+            // cboModeDeTransport.SelectedItem = dgvfraiskilometriques.SelectedRows[0].Cells[1].Value;
+            dgvfraiskilometriques.SelectedRows[0].Cells[1].Value = cboModeDeTransport.Text;
+            dgvfraiskilometriques.SelectedRows[0].Cells[0].Value = txtQuantiteKilometres.Text;
+            dgvfraiskilometriques.SelectedRows[0].Cells[2].Value = b.ToString();
+        }
+
+        private void Dgvfraiskilometriques_SelectionChanged(object sender, EventArgs e)
+        {
+            //  MessageBox.Show(dgvfraiskilometriques.SelectedRows[0].Cells[1].Value.ToString());
+            cboModeDeTransport.Text= dgvfraiskilometriques.SelectedRows[0].Cells[1].Value.ToString();
+            txtQuantiteKilometres.Text = dgvfraiskilometriques.SelectedRows[0].Cells[0].Value.ToString();
+        }
+
+        private void BtnSupprimer_Click(object sender, EventArgs e)
+        {
+           
+                   
+                
         }
     }
 }
