@@ -29,7 +29,7 @@ namespace Swiss_Visite
 
         public static void ThreadProc()
         {
-            Application.Run(new frmMenu());
+            Application.Run(new FormMenuMission3());
         }
 
         private void BtnValider_Click(object sender, EventArgs e)
