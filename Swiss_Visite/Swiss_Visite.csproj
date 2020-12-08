@@ -82,6 +82,12 @@
     <Compile Include="frmRegion.Designer.cs">
       <DependentUpon>frmRegion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSecteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSecteur.Designer.cs">
+      <DependentUpon>frmSecteur.cs</DependentUpon>
+    </Compile>
     <Compile Include="pwModif.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegion.resx">
       <DependentUpon>frmRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSecteur.resx">
+      <DependentUpon>frmSecteur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pwModif.resx">
       <DependentUpon>pwModif.cs</DependentUpon>

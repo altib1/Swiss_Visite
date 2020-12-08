@@ -142,8 +142,19 @@ namespace Swiss_Visite
         {
             return maConnexion.Region.ToList();
         }
-        
-       
+
+        public static List<Secteur> listesecteur()
+        {
+            return maConnexion.Secteur.ToList();
+        }
+
+
+       // public static Object visiteurParSecteur(int idSecteur)
+       //{
+            
+
+        //}
+
 
     }
 }

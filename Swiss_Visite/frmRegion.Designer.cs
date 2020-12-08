@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.cboRegion = new System.Windows.Forms.ComboBox();
             this.bsRegion = new System.Windows.Forms.BindingSource(this.components);
-            this.dgvVisiteur = new System.Windows.Forms.DataGridView();
-            this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.txtResp = new System.Windows.Forms.TextBox();
-            this.prenomResp = new System.Windows.Forms.TextBox();
+            this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
+            this.prenomResp = new System.Windows.Forms.TextBox();
+            this.dgvVisiteur = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.bsRegion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVisiteur)).BeginInit();
             this.SuspendLayout();
             // 
             // cboRegion
@@ -54,15 +54,6 @@
             // bsRegion
             // 
             this.bsRegion.CurrentChanged += new System.EventHandler(this.BsRegion_CurrentChanged);
-            // 
-            // dgvVisiteur
-            // 
-            this.dgvVisiteur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVisiteur.Location = new System.Drawing.Point(26, 131);
-            this.dgvVisiteur.Name = "dgvVisiteur";
-            this.dgvVisiteur.Size = new System.Drawing.Size(353, 169);
-            this.dgvVisiteur.TabIndex = 1;
-            this.dgvVisiteur.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVisiteur_CellContentClick);
             // 
             // label1
             // 
@@ -81,13 +72,6 @@
             this.txtResp.TabIndex = 3;
             this.txtResp.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
-            // prenomResp
-            // 
-            this.prenomResp.Location = new System.Drawing.Point(483, 46);
-            this.prenomResp.Name = "prenomResp";
-            this.prenomResp.Size = new System.Drawing.Size(100, 20);
-            this.prenomResp.TabIndex = 4;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -96,6 +80,22 @@
             this.label2.Size = new System.Drawing.Size(103, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Prénom responsable";
+            // 
+            // prenomResp
+            // 
+            this.prenomResp.Location = new System.Drawing.Point(483, 46);
+            this.prenomResp.Name = "prenomResp";
+            this.prenomResp.Size = new System.Drawing.Size(100, 20);
+            this.prenomResp.TabIndex = 4;
+            // 
+            // dgvVisiteur
+            // 
+            this.dgvVisiteur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVisiteur.Location = new System.Drawing.Point(26, 131);
+            this.dgvVisiteur.Name = "dgvVisiteur";
+            this.dgvVisiteur.Size = new System.Drawing.Size(353, 169);
+            this.dgvVisiteur.TabIndex = 1;
+            this.dgvVisiteur.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVisiteur_CellContentClick);
             // 
             // frmRegion
             // 
@@ -112,8 +112,8 @@
             this.Text = "frmRegion";
             this.Load += new System.EventHandler(this.FrmRegion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsRegion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVisiteur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVisiteur)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,11 +123,11 @@
 
         private System.Windows.Forms.ComboBox cboRegion;
         private System.Windows.Forms.BindingSource bsRegion;
-        private System.Windows.Forms.DataGridView dgvVisiteur;
-        private System.Windows.Forms.BindingSource bsVisiteur;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtResp;
-        private System.Windows.Forms.TextBox prenomResp;
+        private System.Windows.Forms.BindingSource bsVisiteur;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox prenomResp;
+        private System.Windows.Forms.DataGridView dgvVisiteur;
     }
 }

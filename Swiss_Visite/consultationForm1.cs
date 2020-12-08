@@ -123,10 +123,10 @@ namespace Swiss_Visite
             dgvRegion1.Columns[1].Visible = true;
 
             dgvRegion1.Columns[1].HeaderText = "Région(s) ";
-            if(dgvRegion.RowCount==0)
+            if(dgvRegion1.RowCount==0)
             {
 
-                dgvRegion.Visible= false;
+                dgvRegion1.Visible= false;
 
             }
 

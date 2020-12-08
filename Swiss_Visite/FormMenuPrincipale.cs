@@ -60,5 +60,11 @@ namespace Swiss_Visite
             region.Show();
 
         }
+
+        private void ParSecteurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSecteur secteur = new frmSecteur();
+            secteur.Show();
+        }
     }
 }
