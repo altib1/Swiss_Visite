@@ -70,6 +70,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMenuMission3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuMission3.Designer.cs">
+      <DependentUpon>FormMenuMission3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mission3Comptable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuMission3.resx">
+      <DependentUpon>FormMenuMission3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConexion.resx">
       <DependentUpon>frmConexion.cs</DependentUpon>

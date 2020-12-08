@@ -65,6 +65,10 @@ namespace Swiss_Visite
             bsSoir.DataSource = ModelMission3.rechercheFraisForfait("RES");
 
             txtMontantSoir.Text = ((FraisForfait)bsSoir[0]).montant.ToString();
+            //frais forfait nuite
+            bsForfaitnuite.DataSource = ModelMission3.rechercheFraisForfait("ETP");
+
+            txtMontantForfaitnuite.Text = ((FraisForfait)bsForfaitnuite[0]).montant.ToString();
 
             cboModeDeTransport.ValueMember = "id";//permet de stocker l'identifiant
             cboModeDeTransport.DisplayMember = "libelle";
@@ -88,7 +92,9 @@ namespace Swiss_Visite
               
 
             }
-           
+
+            txtTotalMidi.Text = (double.Parse(numMidi.Value.ToString()) * double.Parse(txtMontantMidi.Text)).ToString();
+            
         }
 
         private void DgvForfait_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -123,7 +129,7 @@ namespace Swiss_Visite
 
         private void BtnAjoutertrans_Click(object sender, EventArgs e)
         {
-            if (dgvfraiskilometriques.RowCount  > 0)
+            if (dgvfraiskilometriques.RowCount  > 0 )
             {
                 string a = ((FraisForfait)bsModedetransport.Current).montant.ToString();
                 double b = (double.Parse(txtQuantiteKilometres.Text) * double.Parse(a));
@@ -154,15 +160,53 @@ namespace Swiss_Visite
         private void Dgvfraiskilometriques_SelectionChanged(object sender, EventArgs e)
         {
             //  MessageBox.Show(dgvfraiskilometriques.SelectedRows[0].Cells[1].Value.ToString());
-            cboModeDeTransport.Text= dgvfraiskilometriques.SelectedRows[0].Cells[1].Value.ToString();
-            txtQuantiteKilometres.Text = dgvfraiskilometriques.SelectedRows[0].Cells[0].Value.ToString();
+            if (dgvfraiskilometriques.SelectedRows[0].Cells[1].Value != null)
+            {
+                cboModeDeTransport.Text = dgvfraiskilometriques.SelectedRows[0].Cells[1].Value.ToString();
+                txtQuantiteKilometres.Text = dgvfraiskilometriques.SelectedRows[0].Cells[0].Value.ToString();
+            }
         }
 
         private void BtnSupprimer_Click(object sender, EventArgs e)
         {
-           
-                   
-                
+            if (dgvfraiskilometriques.CurrentRow.Selected == true)
+            {
+                if (MessageBox.Show("voulez vous vraiement suprimer ?", "Confirmer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int rowIndex = dgvfraiskilometriques.CurrentCell.RowIndex;
+                    dgvfraiskilometriques.Rows.RemoveAt(rowIndex);
+                }
+                else
+                {
+                    // user clicked no
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selectionner la ligne que vous voulez supprimer");
+            }
+
+
+        }
+
+        private void NumMidi_ValueChanged(object sender, EventArgs e)
+        {
+            txtTotalMidi.Text = (double.Parse(numMidi.Value.ToString()) * double.Parse(txtMontantMidi.Text)).ToString();
+        }
+
+        private void NumNuite_ValueChanged(object sender, EventArgs e)
+        {
+            txtTotalNuit.Text = (double.Parse(numNuite.Value.ToString()) * double.Parse(txtMontantNuit.Text)).ToString();
+        }
+
+        private void NumSoir_ValueChanged(object sender, EventArgs e)
+        {
+            txtTotalRepasSoir.Text = (double.Parse(numSoir.Value.ToString()) * double.Parse(txtMontantSoir.Text)).ToString();
+        }
+
+        private void NumForfaitnuite_ValueChanged(object sender, EventArgs e)
+        {
+            txttotalForfaitnuite.Text = (double.Parse(numForfaitnuite.Value.ToString()) * double.Parse(txtMontantForfaitnuite.Text)).ToString();
         }
     }
 }
