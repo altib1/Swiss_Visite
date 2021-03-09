@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,7 +53,15 @@ namespace Swiss_Visite
 
             // bsMois.DataSource = DateTime.Today.Month;
             // dtMois.Value.Month = bsMois.DataSource;
-            dtMois.Value = DateTime.Today;
+            // cbmois.Value = DateTime.Today;
+            CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("fr-FR");
+
+            cbmois.DataSource = CultureInfo.DefaultThreadCurrentCulture.DateTimeFormat
+                                                     .MonthNames.Take(12).ToList();
+            cbmois.SelectedItem = CultureInfo.DefaultThreadCurrentCulture.DateTimeFormat
+                                                    .MonthNames[DateTime.Now.AddMonths(-1).Month - 1];
+
+         
             //frais une Nuite
             bsNuit.DataSource = ModelMission3.rechercheFraisForfait("NUI");
 
