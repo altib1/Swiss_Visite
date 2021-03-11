@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbmois = new System.Windows.Forms.ComboBox();
             this.txtQuantiteKilometres = new System.Windows.Forms.NumericUpDown();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
@@ -86,7 +87,6 @@
             this.bsModedetransport = new System.Windows.Forms.BindingSource(this.components);
             this.bsdgvtransport = new System.Windows.Forms.BindingSource(this.components);
             this.bsForfaitnuite = new System.Windows.Forms.BindingSource(this.components);
-            this.cbmois = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuantiteKilometres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvfraiskilometriques)).BeginInit();
@@ -137,10 +137,20 @@
             this.panel1.Size = new System.Drawing.Size(670, 597);
             this.panel1.TabIndex = 0;
             // 
+            // cbmois
+            // 
+            this.cbmois.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbmois.FormattingEnabled = true;
+            this.cbmois.Location = new System.Drawing.Point(80, 174);
+            this.cbmois.Name = "cbmois";
+            this.cbmois.Size = new System.Drawing.Size(121, 21);
+            this.cbmois.TabIndex = 28;
+            // 
             // txtQuantiteKilometres
             // 
             this.txtQuantiteKilometres.Location = new System.Drawing.Point(109, 425);
             this.txtQuantiteKilometres.Name = "txtQuantiteKilometres";
+            this.txtQuantiteKilometres.ReadOnly = true;
             this.txtQuantiteKilometres.Size = new System.Drawing.Size(120, 20);
             this.txtQuantiteKilometres.TabIndex = 27;
             // 
@@ -194,6 +204,7 @@
             // 
             // cboModeDeTransport
             // 
+            this.cboModeDeTransport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboModeDeTransport.FormattingEnabled = true;
             this.cboModeDeTransport.Location = new System.Drawing.Point(259, 424);
             this.cboModeDeTransport.Name = "cboModeDeTransport";
@@ -254,7 +265,7 @@
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.1282F));
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.8718F));
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 298F));
-            this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154F));
             this.tblVisiteur.Controls.Add(this.label3, 0, 4);
             this.tblVisiteur.Controls.Add(this.numSoir, 1, 3);
             this.tblVisiteur.Controls.Add(this.numMidi, 1, 2);
@@ -300,52 +311,59 @@
             // 
             // numSoir
             // 
-            this.numSoir.Location = new System.Drawing.Point(132, 100);
+            this.numSoir.Location = new System.Drawing.Point(129, 100);
             this.numSoir.Name = "numSoir";
-            this.numSoir.Size = new System.Drawing.Size(57, 20);
+            this.numSoir.ReadOnly = true;
+            this.numSoir.Size = new System.Drawing.Size(56, 20);
             this.numSoir.TabIndex = 30;
             this.numSoir.ValueChanged += new System.EventHandler(this.NumSoir_ValueChanged);
             // 
             // numMidi
             // 
-            this.numMidi.Location = new System.Drawing.Point(132, 68);
+            this.numMidi.Location = new System.Drawing.Point(129, 68);
             this.numMidi.Name = "numMidi";
-            this.numMidi.Size = new System.Drawing.Size(57, 20);
+            this.numMidi.ReadOnly = true;
+            this.numMidi.Size = new System.Drawing.Size(56, 20);
             this.numMidi.TabIndex = 29;
             this.numMidi.ValueChanged += new System.EventHandler(this.NumMidi_ValueChanged);
             // 
             // txtTotalRepasSoir
             // 
-            this.txtTotalRepasSoir.Location = new System.Drawing.Point(499, 100);
+            this.txtTotalRepasSoir.Location = new System.Drawing.Point(495, 100);
             this.txtTotalRepasSoir.Name = "txtTotalRepasSoir";
+            this.txtTotalRepasSoir.ReadOnly = true;
             this.txtTotalRepasSoir.Size = new System.Drawing.Size(101, 20);
             this.txtTotalRepasSoir.TabIndex = 24;
             // 
             // txtMontantSoir
             // 
-            this.txtMontantSoir.Location = new System.Drawing.Point(198, 100);
+            this.txtMontantSoir.Location = new System.Drawing.Point(194, 100);
             this.txtMontantSoir.Name = "txtMontantSoir";
+            this.txtMontantSoir.ReadOnly = true;
             this.txtMontantSoir.Size = new System.Drawing.Size(291, 20);
             this.txtMontantSoir.TabIndex = 23;
             // 
             // txtTotalMidi
             // 
-            this.txtTotalMidi.Location = new System.Drawing.Point(499, 68);
+            this.txtTotalMidi.Location = new System.Drawing.Point(495, 68);
             this.txtTotalMidi.Name = "txtTotalMidi";
+            this.txtTotalMidi.ReadOnly = true;
             this.txtTotalMidi.Size = new System.Drawing.Size(101, 20);
             this.txtTotalMidi.TabIndex = 21;
             // 
             // txtMontantMidi
             // 
-            this.txtMontantMidi.Location = new System.Drawing.Point(198, 68);
+            this.txtMontantMidi.Location = new System.Drawing.Point(194, 68);
             this.txtMontantMidi.Name = "txtMontantMidi";
+            this.txtMontantMidi.ReadOnly = true;
             this.txtMontantMidi.Size = new System.Drawing.Size(291, 20);
             this.txtMontantMidi.TabIndex = 20;
             // 
             // txtTotalNuit
             // 
-            this.txtTotalNuit.Location = new System.Drawing.Point(499, 44);
+            this.txtTotalNuit.Location = new System.Drawing.Point(495, 44);
             this.txtTotalNuit.Name = "txtTotalNuit";
+            this.txtTotalNuit.ReadOnly = true;
             this.txtTotalNuit.Size = new System.Drawing.Size(101, 20);
             this.txtTotalNuit.TabIndex = 18;
             // 
@@ -364,7 +382,7 @@
             this.lblQuantite.AutoSize = true;
             this.lblQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantite.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblQuantite.Location = new System.Drawing.Point(132, 8);
+            this.lblQuantite.Location = new System.Drawing.Point(129, 8);
             this.lblQuantite.Name = "lblQuantite";
             this.lblQuantite.Size = new System.Drawing.Size(56, 30);
             this.lblQuantite.TabIndex = 11;
@@ -386,7 +404,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblTotal.Location = new System.Drawing.Point(499, 8);
+            this.lblTotal.Location = new System.Drawing.Point(495, 8);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(44, 16);
             this.lblTotal.TabIndex = 13;
@@ -415,8 +433,9 @@
             // 
             // txtMontantNuit
             // 
-            this.txtMontantNuit.Location = new System.Drawing.Point(198, 44);
+            this.txtMontantNuit.Location = new System.Drawing.Point(194, 44);
             this.txtMontantNuit.Name = "txtMontantNuit";
+            this.txtMontantNuit.ReadOnly = true;
             this.txtMontantNuit.Size = new System.Drawing.Size(291, 20);
             this.txtMontantNuit.TabIndex = 17;
             // 
@@ -428,7 +447,7 @@
             this.lblMontatnt.AutoSize = true;
             this.lblMontatnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontatnt.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblMontatnt.Location = new System.Drawing.Point(198, 8);
+            this.lblMontatnt.Location = new System.Drawing.Point(194, 8);
             this.lblMontatnt.Name = "lblMontatnt";
             this.lblMontatnt.Size = new System.Drawing.Size(292, 30);
             this.lblMontatnt.TabIndex = 12;
@@ -437,31 +456,35 @@
             // 
             // txtMontantForfaitnuite
             // 
-            this.txtMontantForfaitnuite.Location = new System.Drawing.Point(198, 130);
+            this.txtMontantForfaitnuite.Location = new System.Drawing.Point(194, 130);
             this.txtMontantForfaitnuite.Name = "txtMontantForfaitnuite";
+            this.txtMontantForfaitnuite.ReadOnly = true;
             this.txtMontantForfaitnuite.Size = new System.Drawing.Size(292, 20);
             this.txtMontantForfaitnuite.TabIndex = 26;
             // 
             // txttotalForfaitnuite
             // 
-            this.txttotalForfaitnuite.Location = new System.Drawing.Point(499, 130);
+            this.txttotalForfaitnuite.Location = new System.Drawing.Point(495, 130);
             this.txttotalForfaitnuite.Name = "txttotalForfaitnuite";
+            this.txttotalForfaitnuite.ReadOnly = true;
             this.txttotalForfaitnuite.Size = new System.Drawing.Size(101, 20);
             this.txttotalForfaitnuite.TabIndex = 27;
             // 
             // numNuite
             // 
-            this.numNuite.Location = new System.Drawing.Point(132, 44);
+            this.numNuite.Location = new System.Drawing.Point(129, 44);
             this.numNuite.Name = "numNuite";
-            this.numNuite.Size = new System.Drawing.Size(57, 20);
+            this.numNuite.ReadOnly = true;
+            this.numNuite.Size = new System.Drawing.Size(56, 20);
             this.numNuite.TabIndex = 28;
             this.numNuite.ValueChanged += new System.EventHandler(this.NumNuite_ValueChanged);
             // 
             // numForfaitnuite
             // 
-            this.numForfaitnuite.Location = new System.Drawing.Point(132, 130);
+            this.numForfaitnuite.Location = new System.Drawing.Point(129, 130);
             this.numForfaitnuite.Name = "numForfaitnuite";
-            this.numForfaitnuite.Size = new System.Drawing.Size(57, 20);
+            this.numForfaitnuite.ReadOnly = true;
+            this.numForfaitnuite.Size = new System.Drawing.Size(56, 20);
             this.numForfaitnuite.TabIndex = 31;
             this.numForfaitnuite.ValueChanged += new System.EventHandler(this.NumForfaitnuite_ValueChanged);
             // 
@@ -469,6 +492,7 @@
             // 
             this.txtPrenom.Location = new System.Drawing.Point(352, 121);
             this.txtPrenom.Name = "txtPrenom";
+            this.txtPrenom.ReadOnly = true;
             this.txtPrenom.Size = new System.Drawing.Size(100, 20);
             this.txtPrenom.TabIndex = 14;
             // 
@@ -486,6 +510,7 @@
             // 
             this.txtNom.Location = new System.Drawing.Point(249, 121);
             this.txtNom.Name = "txtNom";
+            this.txtNom.ReadOnly = true;
             this.txtNom.Size = new System.Drawing.Size(97, 20);
             this.txtNom.TabIndex = 6;
             // 
@@ -503,6 +528,7 @@
             // 
             this.txtMatricule.Location = new System.Drawing.Point(249, 81);
             this.txtMatricule.Name = "txtMatricule";
+            this.txtMatricule.ReadOnly = true;
             this.txtMatricule.Size = new System.Drawing.Size(388, 20);
             this.txtMatricule.TabIndex = 4;
             // 
@@ -559,6 +585,7 @@
             this.btnValiderfichefrais.TabIndex = 1;
             this.btnValiderfichefrais.Text = "Valider";
             this.btnValiderfichefrais.UseVisualStyleBackColor = true;
+            this.btnValiderfichefrais.Click += new System.EventHandler(this.BtnValiderfichefrais_Click);
             // 
             // btnAnnulerfraistransport
             // 
@@ -568,18 +595,11 @@
             this.btnAnnulerfraistransport.TabIndex = 2;
             this.btnAnnulerfraistransport.Text = "Annuler";
             this.btnAnnulerfraistransport.UseVisualStyleBackColor = true;
+            this.btnAnnulerfraistransport.Click += new System.EventHandler(this.BtnAnnulerfraistransport_Click);
             // 
             // bsMois
             // 
             this.bsMois.CurrentChanged += new System.EventHandler(this.BindingSource1_CurrentChanged);
-            // 
-            // cbmois
-            // 
-            this.cbmois.FormattingEnabled = true;
-            this.cbmois.Location = new System.Drawing.Point(80, 174);
-            this.cbmois.Name = "cbmois";
-            this.cbmois.Size = new System.Drawing.Size(121, 21);
-            this.cbmois.TabIndex = 28;
             // 
             // Form2
             // 
@@ -591,7 +611,7 @@
             this.Controls.Add(this.btnValiderfichefrais);
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
-            this.Text = "Visiteur";
+            this.Text = "Fiche de remboursement";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

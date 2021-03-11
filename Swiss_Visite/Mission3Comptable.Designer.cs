@@ -92,7 +92,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.19549F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.80451F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
             this.tableLayoutPanel1.Controls.Add(this.lblMontantAutre, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblDateAutre, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblLibelle, 1, 0);
@@ -113,7 +113,7 @@
             this.lblMontantAutre.AutoSize = true;
             this.lblMontantAutre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontantAutre.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblMontantAutre.Location = new System.Drawing.Point(522, 3);
+            this.lblMontantAutre.Location = new System.Drawing.Point(518, 3);
             this.lblMontantAutre.Name = "lblMontantAutre";
             this.lblMontantAutre.Size = new System.Drawing.Size(62, 16);
             this.lblMontantAutre.TabIndex = 12;
@@ -138,9 +138,9 @@
             this.lblLibelle.AutoSize = true;
             this.lblLibelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLibelle.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblLibelle.Location = new System.Drawing.Point(153, 3);
+            this.lblLibelle.Location = new System.Drawing.Point(151, 3);
             this.lblLibelle.Name = "lblLibelle";
-            this.lblLibelle.Size = new System.Drawing.Size(360, 31);
+            this.lblLibelle.Size = new System.Drawing.Size(358, 31);
             this.lblLibelle.TabIndex = 13;
             this.lblLibelle.Text = "Libelle";
             this.lblLibelle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -163,7 +163,7 @@
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.1282F));
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.8718F));
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 298F));
-            this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
             this.tblVisiteur.Controls.Add(this.txtTotalVehicule, 3, 3);
             this.tblVisiteur.Controls.Add(this.txtMontantVehicule, 2, 3);
             this.tblVisiteur.Controls.Add(this.txtQVehicule, 1, 3);
@@ -193,49 +193,49 @@
             // 
             // txtTotalVehicule
             // 
-            this.txtTotalVehicule.Location = new System.Drawing.Point(527, 96);
+            this.txtTotalVehicule.Location = new System.Drawing.Point(523, 96);
             this.txtTotalVehicule.Name = "txtTotalVehicule";
             this.txtTotalVehicule.Size = new System.Drawing.Size(101, 20);
             this.txtTotalVehicule.TabIndex = 24;
             // 
             // txtMontantVehicule
             // 
-            this.txtMontantVehicule.Location = new System.Drawing.Point(226, 96);
+            this.txtMontantVehicule.Location = new System.Drawing.Point(222, 96);
             this.txtMontantVehicule.Name = "txtMontantVehicule";
             this.txtMontantVehicule.Size = new System.Drawing.Size(291, 20);
             this.txtMontantVehicule.TabIndex = 23;
             // 
             // txtQVehicule
             // 
-            this.txtQVehicule.Location = new System.Drawing.Point(150, 96);
+            this.txtQVehicule.Location = new System.Drawing.Point(148, 96);
             this.txtQVehicule.Name = "txtQVehicule";
-            this.txtQVehicule.Size = new System.Drawing.Size(67, 20);
+            this.txtQVehicule.Size = new System.Drawing.Size(65, 20);
             this.txtQVehicule.TabIndex = 22;
             // 
             // txtTotalMidi
             // 
-            this.txtTotalMidi.Location = new System.Drawing.Point(527, 64);
+            this.txtTotalMidi.Location = new System.Drawing.Point(523, 64);
             this.txtTotalMidi.Name = "txtTotalMidi";
             this.txtTotalMidi.Size = new System.Drawing.Size(101, 20);
             this.txtTotalMidi.TabIndex = 21;
             // 
             // txtMontantMidi
             // 
-            this.txtMontantMidi.Location = new System.Drawing.Point(226, 64);
+            this.txtMontantMidi.Location = new System.Drawing.Point(222, 64);
             this.txtMontantMidi.Name = "txtMontantMidi";
             this.txtMontantMidi.Size = new System.Drawing.Size(291, 20);
             this.txtMontantMidi.TabIndex = 20;
             // 
             // txtQMidi
             // 
-            this.txtQMidi.Location = new System.Drawing.Point(150, 64);
+            this.txtQMidi.Location = new System.Drawing.Point(148, 64);
             this.txtQMidi.Name = "txtQMidi";
-            this.txtQMidi.Size = new System.Drawing.Size(67, 20);
+            this.txtQMidi.Size = new System.Drawing.Size(65, 20);
             this.txtQMidi.TabIndex = 19;
             // 
             // txtTotalNuit
             // 
-            this.txtTotalNuit.Location = new System.Drawing.Point(527, 42);
+            this.txtTotalNuit.Location = new System.Drawing.Point(523, 42);
             this.txtTotalNuit.Name = "txtTotalNuit";
             this.txtTotalNuit.Size = new System.Drawing.Size(101, 20);
             this.txtTotalNuit.TabIndex = 18;
@@ -255,7 +255,7 @@
             this.lblQuantite.AutoSize = true;
             this.lblQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantite.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblQuantite.Location = new System.Drawing.Point(150, 8);
+            this.lblQuantite.Location = new System.Drawing.Point(148, 8);
             this.lblQuantite.Name = "lblQuantite";
             this.lblQuantite.Size = new System.Drawing.Size(65, 16);
             this.lblQuantite.TabIndex = 11;
@@ -280,7 +280,7 @@
             this.lblMontatnt.AutoSize = true;
             this.lblMontatnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontatnt.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblMontatnt.Location = new System.Drawing.Point(226, 8);
+            this.lblMontatnt.Location = new System.Drawing.Point(222, 8);
             this.lblMontatnt.Name = "lblMontatnt";
             this.lblMontatnt.Size = new System.Drawing.Size(292, 28);
             this.lblMontatnt.TabIndex = 12;
@@ -292,7 +292,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblTotal.Location = new System.Drawing.Point(527, 8);
+            this.lblTotal.Location = new System.Drawing.Point(523, 8);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(44, 16);
             this.lblTotal.TabIndex = 13;
@@ -320,14 +320,14 @@
             // 
             // txtQNuit
             // 
-            this.txtQNuit.Location = new System.Drawing.Point(150, 42);
+            this.txtQNuit.Location = new System.Drawing.Point(148, 42);
             this.txtQNuit.Name = "txtQNuit";
-            this.txtQNuit.Size = new System.Drawing.Size(67, 20);
+            this.txtQNuit.Size = new System.Drawing.Size(65, 20);
             this.txtQNuit.TabIndex = 16;
             // 
             // txtMontantNuit
             // 
-            this.txtMontantNuit.Location = new System.Drawing.Point(226, 42);
+            this.txtMontantNuit.Location = new System.Drawing.Point(222, 42);
             this.txtMontantNuit.Name = "txtMontantNuit";
             this.txtMontantNuit.Size = new System.Drawing.Size(291, 20);
             this.txtMontantNuit.TabIndex = 17;

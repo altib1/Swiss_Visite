@@ -178,7 +178,7 @@ namespace Swiss_Visite
 
         private void BtnSupprimer_Click(object sender, EventArgs e)
         {
-            if (dgvfraiskilometriques.CurrentRow.Selected == true)
+            if (dgvfraiskilometriques.CurrentRow.Selected == true && dgvfraiskilometriques.Rows.Count > 1 && dgvfraiskilometriques.Rows != null)
             {
                 if (MessageBox.Show("voulez vous vraiement suprimer ?", "Confirmer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -217,5 +217,47 @@ namespace Swiss_Visite
         {
             txttotalForfaitnuite.Text = (double.Parse(numForfaitnuite.Value.ToString()) * double.Parse(txtMontantForfaitnuite.Text)).ToString();
         }
+        public static void ThreadProc()
+        {
+            Application.Run(new FormMenuMission3());
+        }
+
+        private void BtnAnnulerfraistransport_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
+
+            t.Start();
+            this.Close();
+
+        }
+
+        private void BtnValiderfichefrais_Click(object sender, EventArgs e)
+        {
+            var context = new BALNEntities();
+
+            var lafiche = new fichefrais();
+            
+                lafiche.idVisiteur = txtMatricule.Text;
+                lafiche.mois = "202103";
+                lafiche.idEtat = "CR";
+                lafiche.nbJustificatifs = 0;
+                lafiche.montantValide = 263;
+                lafiche.dateModif = DateTime.Now;
+            
+            
+
+            context.fichefrais.Add(lafiche);
+            context.GetValidationErrors();
+            try
+            {
+                context.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(context.GetValidationErrors().ToString());
+            }
+            
+        }
     }
 }
+ 
