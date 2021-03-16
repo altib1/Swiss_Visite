@@ -265,7 +265,7 @@
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.1282F));
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.8718F));
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 298F));
-            this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154F));
+            this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
             this.tblVisiteur.Controls.Add(this.label3, 0, 4);
             this.tblVisiteur.Controls.Add(this.numSoir, 1, 3);
             this.tblVisiteur.Controls.Add(this.numMidi, 1, 2);
@@ -311,25 +311,25 @@
             // 
             // numSoir
             // 
-            this.numSoir.Location = new System.Drawing.Point(129, 100);
+            this.numSoir.Location = new System.Drawing.Point(127, 100);
             this.numSoir.Name = "numSoir";
             this.numSoir.ReadOnly = true;
-            this.numSoir.Size = new System.Drawing.Size(56, 20);
+            this.numSoir.Size = new System.Drawing.Size(54, 20);
             this.numSoir.TabIndex = 30;
             this.numSoir.ValueChanged += new System.EventHandler(this.NumSoir_ValueChanged);
             // 
             // numMidi
             // 
-            this.numMidi.Location = new System.Drawing.Point(129, 68);
+            this.numMidi.Location = new System.Drawing.Point(127, 68);
             this.numMidi.Name = "numMidi";
             this.numMidi.ReadOnly = true;
-            this.numMidi.Size = new System.Drawing.Size(56, 20);
+            this.numMidi.Size = new System.Drawing.Size(54, 20);
             this.numMidi.TabIndex = 29;
             this.numMidi.ValueChanged += new System.EventHandler(this.NumMidi_ValueChanged);
             // 
             // txtTotalRepasSoir
             // 
-            this.txtTotalRepasSoir.Location = new System.Drawing.Point(495, 100);
+            this.txtTotalRepasSoir.Location = new System.Drawing.Point(491, 100);
             this.txtTotalRepasSoir.Name = "txtTotalRepasSoir";
             this.txtTotalRepasSoir.ReadOnly = true;
             this.txtTotalRepasSoir.Size = new System.Drawing.Size(101, 20);
@@ -337,7 +337,7 @@
             // 
             // txtMontantSoir
             // 
-            this.txtMontantSoir.Location = new System.Drawing.Point(194, 100);
+            this.txtMontantSoir.Location = new System.Drawing.Point(190, 100);
             this.txtMontantSoir.Name = "txtMontantSoir";
             this.txtMontantSoir.ReadOnly = true;
             this.txtMontantSoir.Size = new System.Drawing.Size(291, 20);
@@ -345,7 +345,7 @@
             // 
             // txtTotalMidi
             // 
-            this.txtTotalMidi.Location = new System.Drawing.Point(495, 68);
+            this.txtTotalMidi.Location = new System.Drawing.Point(491, 68);
             this.txtTotalMidi.Name = "txtTotalMidi";
             this.txtTotalMidi.ReadOnly = true;
             this.txtTotalMidi.Size = new System.Drawing.Size(101, 20);
@@ -353,7 +353,7 @@
             // 
             // txtMontantMidi
             // 
-            this.txtMontantMidi.Location = new System.Drawing.Point(194, 68);
+            this.txtMontantMidi.Location = new System.Drawing.Point(190, 68);
             this.txtMontantMidi.Name = "txtMontantMidi";
             this.txtMontantMidi.ReadOnly = true;
             this.txtMontantMidi.Size = new System.Drawing.Size(291, 20);
@@ -361,7 +361,7 @@
             // 
             // txtTotalNuit
             // 
-            this.txtTotalNuit.Location = new System.Drawing.Point(495, 44);
+            this.txtTotalNuit.Location = new System.Drawing.Point(491, 44);
             this.txtTotalNuit.Name = "txtTotalNuit";
             this.txtTotalNuit.ReadOnly = true;
             this.txtTotalNuit.Size = new System.Drawing.Size(101, 20);
@@ -382,9 +382,9 @@
             this.lblQuantite.AutoSize = true;
             this.lblQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantite.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblQuantite.Location = new System.Drawing.Point(129, 8);
+            this.lblQuantite.Location = new System.Drawing.Point(127, 8);
             this.lblQuantite.Name = "lblQuantite";
-            this.lblQuantite.Size = new System.Drawing.Size(56, 30);
+            this.lblQuantite.Size = new System.Drawing.Size(52, 30);
             this.lblQuantite.TabIndex = 11;
             this.lblQuantite.Text = "Quantité";
             // 
@@ -404,7 +404,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblTotal.Location = new System.Drawing.Point(495, 8);
+            this.lblTotal.Location = new System.Drawing.Point(491, 8);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(44, 16);
             this.lblTotal.TabIndex = 13;
@@ -433,7 +433,7 @@
             // 
             // txtMontantNuit
             // 
-            this.txtMontantNuit.Location = new System.Drawing.Point(194, 44);
+            this.txtMontantNuit.Location = new System.Drawing.Point(190, 44);
             this.txtMontantNuit.Name = "txtMontantNuit";
             this.txtMontantNuit.ReadOnly = true;
             this.txtMontantNuit.Size = new System.Drawing.Size(291, 20);
@@ -447,7 +447,7 @@
             this.lblMontatnt.AutoSize = true;
             this.lblMontatnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontatnt.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblMontatnt.Location = new System.Drawing.Point(194, 8);
+            this.lblMontatnt.Location = new System.Drawing.Point(190, 8);
             this.lblMontatnt.Name = "lblMontatnt";
             this.lblMontatnt.Size = new System.Drawing.Size(292, 30);
             this.lblMontatnt.TabIndex = 12;
@@ -456,7 +456,7 @@
             // 
             // txtMontantForfaitnuite
             // 
-            this.txtMontantForfaitnuite.Location = new System.Drawing.Point(194, 130);
+            this.txtMontantForfaitnuite.Location = new System.Drawing.Point(190, 130);
             this.txtMontantForfaitnuite.Name = "txtMontantForfaitnuite";
             this.txtMontantForfaitnuite.ReadOnly = true;
             this.txtMontantForfaitnuite.Size = new System.Drawing.Size(292, 20);
@@ -464,7 +464,7 @@
             // 
             // txttotalForfaitnuite
             // 
-            this.txttotalForfaitnuite.Location = new System.Drawing.Point(495, 130);
+            this.txttotalForfaitnuite.Location = new System.Drawing.Point(491, 130);
             this.txttotalForfaitnuite.Name = "txttotalForfaitnuite";
             this.txttotalForfaitnuite.ReadOnly = true;
             this.txttotalForfaitnuite.Size = new System.Drawing.Size(101, 20);
@@ -472,19 +472,19 @@
             // 
             // numNuite
             // 
-            this.numNuite.Location = new System.Drawing.Point(129, 44);
+            this.numNuite.Location = new System.Drawing.Point(127, 44);
             this.numNuite.Name = "numNuite";
             this.numNuite.ReadOnly = true;
-            this.numNuite.Size = new System.Drawing.Size(56, 20);
+            this.numNuite.Size = new System.Drawing.Size(54, 20);
             this.numNuite.TabIndex = 28;
             this.numNuite.ValueChanged += new System.EventHandler(this.NumNuite_ValueChanged);
             // 
             // numForfaitnuite
             // 
-            this.numForfaitnuite.Location = new System.Drawing.Point(129, 130);
+            this.numForfaitnuite.Location = new System.Drawing.Point(127, 130);
             this.numForfaitnuite.Name = "numForfaitnuite";
             this.numForfaitnuite.ReadOnly = true;
-            this.numForfaitnuite.Size = new System.Drawing.Size(56, 20);
+            this.numForfaitnuite.Size = new System.Drawing.Size(54, 20);
             this.numForfaitnuite.TabIndex = 31;
             this.numForfaitnuite.ValueChanged += new System.EventHandler(this.NumForfaitnuite_ValueChanged);
             // 
