@@ -233,6 +233,7 @@ namespace Swiss_Visite
 
         private void BtnValiderfichefrais_Click(object sender, EventArgs e)
         {
+            
             var context = new BALNEntities();
 
             var lafiche = new fichefrais();
@@ -247,6 +248,7 @@ namespace Swiss_Visite
                 lafiche.idEtat = "CR";
                 lafiche.nbJustificatifs = 0;
                 lafiche.dateModif = DateTime.Now;
+            context.fichefrais.Add(lafiche);
             if (numNuite.Value > 0)
             {
                 lignefraisforfaitnui.idVisiteur = txtMatricule.Text;
@@ -255,14 +257,9 @@ namespace Swiss_Visite
                 lignefraisforfaitnui.idFraisForfait = "NUI";
                 context.LigneFraisForfait.Add(lignefraisforfaitnui);
 
-                try
-                {
-                    context.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Une fiche a ete deja cree pour ce mois !");
-                }
+                    
+          
+
             }
 
             if (numMidi.Value > 0)
@@ -273,14 +270,9 @@ namespace Swiss_Visite
                 lignefraisforfaitmidi.idFraisForfait = "REM";
                 context.LigneFraisForfait.Add(lignefraisforfaitmidi);
 
-                try
-                {
-                    context.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Une fiche a ete deja cree pour ce mois !");
-                }
+
+                    
+
             }
 
             if (numSoir.Value > 0)
@@ -291,14 +283,8 @@ namespace Swiss_Visite
                 lignefraisforfaitsoir.idFraisForfait = "RES";
                 context.LigneFraisForfait.Add(lignefraisforfaitsoir);
 
-                try
-                {
-                    context.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Une fiche a ete deja cree pour ce mois !");
-                }
+                   
+
             }
 
             if (numForfaitnuite.Value > 0)
@@ -309,47 +295,52 @@ namespace Swiss_Visite
                 lignefraisforfaitforfaitnuite.idFraisForfait = "ETP";
                 context.LigneFraisForfait.Add(lignefraisforfaitforfaitnuite);
 
-                try
-                {
-                    context.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Une fiche a ete deja cree pour ce mois !");
-                }
+
+                    
+
             }
 
-            
-            foreach(DataGridViewRow row in dgvfraiskilometriques.Rows)
+            for (int i = 0; i < dgvfraiskilometriques.Rows.Count -1 ; i++)
             {
                 var fraiskilometrique = new LigneFraisForfait();
-
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    if(cell.ColumnIndex == 0)
-                    {
-                        fraiskilometrique.idVisiteur = txtMatricule.Text;
-                        fraiskilometrique.mois = date;
-                        fraiskilometrique.quantite = (int)cell.Value;
-                        fraiskilometrique.idFraisForfait =?;
-                    }
-                }
-            }
-
-            
-            context.fichefrais.Add(lafiche);
-            
-            context.GetValidationErrors();
-            try
-            {
+            //    MessageBox.Show(dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
+                fraiskilometrique.idVisiteur = txtMatricule.Text;
+                fraiskilometrique.mois = date;
+                fraiskilometrique.quantite = int.Parse(dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
+                fraiskilometrique.idFraisForfait = ModelMission3.idlignefrais(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString()).ToString();
+                context.LigneFraisForfait.Add(fraiskilometrique);
                 context.SaveChanges();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Une fiche a ete deja cree pour ce mois !");
-            }
 
+            }
             MessageBox.Show("les enregistrements ont ete effectue!");
+            /*    foreach (DataGridViewRow row in dgvfraiskilometriques.Rows)
+                {
+                    var fraiskilometrique = new LigneFraisForfait();
+
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if(cell.ColumnIndex == 1)
+                        {
+                            fraiskilometrique.idVisiteur = txtMatricule.Text;
+                            fraiskilometrique.mois = date;
+                            fraiskilometrique.quantite = (int)cell.Value;
+
+
+
+                        }
+                        if (cell.ColumnIndex == 2)
+                        {
+                            string libelle = (string)cell.Value.ToString();
+                            fraiskilometrique.idFraisForfait = ModelMission3.idlignefrais(libelle.ToString()).ToString();
+                        }
+
+
+
+                    }
+                }  */
+
+
+            
 
         }
     }
