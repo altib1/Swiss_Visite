@@ -143,7 +143,15 @@ namespace Swiss_Visite
                     lafiche.nbJustificatifs = int.Parse(nbjustificatifs);
                     lafiche.dateModif = DateTime.Now;
                     maConnexion.fichefrais.Add(lafiche);
-                    maConnexion.SaveChanges();
+                    try
+                    {
+                        maConnexion.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        maConnexion.Dispose();
+                        init();
+                    }
                 }
             }
             catch (Exception)
@@ -166,7 +174,15 @@ namespace Swiss_Visite
             nuite.quantite = int.Parse(quantite);
             nuite.idFraisForfait = idfraisforfait;
             maConnexion.LigneFraisForfait.Add(nuite);
-            maConnexion.SaveChanges();
+            try
+            {
+                maConnexion.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                maConnexion.Dispose();
+                init();
+            }
 
         }
         public static void enregsoir(string idvisiteurs, string mois, string idfraisforfait, string quantite)
@@ -178,7 +194,15 @@ namespace Swiss_Visite
             soir.quantite = int.Parse(quantite);
             soir.idFraisForfait = idfraisforfait;
             maConnexion.LigneFraisForfait.Add(soir);
-            maConnexion.SaveChanges();
+            try
+            {
+                maConnexion.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                maConnexion.Dispose();
+                init();
+            }
 
         }
 
@@ -191,7 +215,17 @@ namespace Swiss_Visite
             midi.quantite = int.Parse(quantite);
             midi.idFraisForfait = idfraisforfait;
             maConnexion.LigneFraisForfait.Add(midi);
-            maConnexion.SaveChanges();
+            
+
+            try
+            {
+                maConnexion.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                maConnexion.Dispose();
+                init();
+            }
 
         }
 
@@ -204,7 +238,15 @@ namespace Swiss_Visite
             forfnuite.quantite = int.Parse(quantite);
             forfnuite.idFraisForfait = idfraisforfait;
             maConnexion.LigneFraisForfait.Add(forfnuite);
-            maConnexion.SaveChanges();
+            try
+            {
+                maConnexion.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                maConnexion.Dispose();
+                init();
+            }
 
         }
 
@@ -217,7 +259,15 @@ namespace Swiss_Visite
             fraiskm.quantite = int.Parse(quantite);
             fraiskm.idFraisForfait = idfraisforfait;
             maConnexion.LigneFraisForfait.Add(fraiskm);
+            try
+            { 
             maConnexion.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                maConnexion.Dispose();
+                init();
+            }
 
         }
 

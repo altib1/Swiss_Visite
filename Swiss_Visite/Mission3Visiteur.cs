@@ -348,7 +348,7 @@ namespace Swiss_Visite
 
                     }
                 }  */
-            string date =  DateTime.Now.Month + "2021";
+            string date =  DateTime.Now.Month + DateTime.Now.Year.ToString();
            if( ModelMission3.enregfichefrais(txtMatricule.Text, date, "CR", "0"))
             {
                 ModelMission3.enregnuite(txtMatricule.Text, date, "NUI", numNuite.Value.ToString());
@@ -357,8 +357,9 @@ namespace Swiss_Visite
                 ModelMission3.enregforfnuite(txtMatricule.Text, date, "ETP", numForfaitnuite.Value.ToString());
                 for (int i = 0; i < dgvfraiskilometriques.Rows.Count - 1; i++)
                 {
-
-
+                    MessageBox.Show(dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
+                    MessageBox.Show(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString());
+                    ModelMission3.enregfraiskm(txtMatricule.Text, date, ((FraisForfait)ModelMission3.idlignefrais(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString())).id , dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
 
                 }
 
