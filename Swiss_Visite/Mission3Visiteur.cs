@@ -234,120 +234,7 @@ namespace Swiss_Visite
         private void BtnValiderfichefrais_Click(object sender, EventArgs e)
         {
 
-            /*    var context = new BALNEntities();
-
-                var lafiche = new fichefrais();
-                var lignefraisforfaitnui = new LigneFraisForfait();
-                var lignefraisforfaitmidi = new LigneFraisForfait();
-                var lignefraisforfaitsoir = new LigneFraisForfait();
-                var lignefraisforfaitforfaitnuite = new LigneFraisForfait();
-
-                lafiche.idVisiteur = txtMatricule.Text;
-                    string date = "2021" + DateTime.Now.Month;
-                    lafiche.mois =  date;
-                    lafiche.idEtat = "CR";
-                    lafiche.nbJustificatifs = 0;
-                    lafiche.dateModif = DateTime.Now;
-                context.fichefrais.Add(lafiche);
-                if (numNuite.Value > 0)
-                {
-                    lignefraisforfaitnui.idVisiteur = txtMatricule.Text;
-                    lignefraisforfaitnui.mois = date;
-                    lignefraisforfaitnui.quantite = (int)numNuite.Value;
-                    lignefraisforfaitnui.idFraisForfait = "NUI";
-                    context.LigneFraisForfait.Add(lignefraisforfaitnui);
-
-
-
-
-                }
-
-                if (numMidi.Value > 0)
-                {
-                    lignefraisforfaitmidi.idVisiteur = txtMatricule.Text;
-                    lignefraisforfaitmidi.mois = date;
-                    lignefraisforfaitmidi.quantite = (int)numMidi.Value;
-                    lignefraisforfaitmidi.idFraisForfait = "REM";
-                    context.LigneFraisForfait.Add(lignefraisforfaitmidi);
-
-
-
-
-                }
-
-                if (numSoir.Value > 0)
-                {
-                    lignefraisforfaitsoir.idVisiteur = txtMatricule.Text;
-                    lignefraisforfaitsoir.mois = date;
-                    lignefraisforfaitsoir.quantite = (int)numSoir.Value;
-                    lignefraisforfaitsoir.idFraisForfait = "RES";
-                    context.LigneFraisForfait.Add(lignefraisforfaitsoir);
-
-
-
-                }
-
-                if (numForfaitnuite.Value > 0)
-                {
-                    lignefraisforfaitforfaitnuite.idVisiteur = txtMatricule.Text;
-                    lignefraisforfaitforfaitnuite.mois = date;
-                    lignefraisforfaitforfaitnuite.quantite = (int)numForfaitnuite.Value;
-                    lignefraisforfaitforfaitnuite.idFraisForfait = "ETP";
-                    context.LigneFraisForfait.Add(lignefraisforfaitforfaitnuite);
-
-
-
-
-                }
-                context.SaveChanges();
-
-                for (int i = 0; i < dgvfraiskilometriques.Rows.Count -1 ; i++)
-                {
-
-                    var fraiskilometrique = new LigneFraisForfait();
-                    MessageBox.Show(dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
-                    MessageBox.Show(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString());
-                    fraiskilometrique.idVisiteur = txtMatricule.Text;
-                    fraiskilometrique.mois = date;
-                    fraiskilometrique.quantite = int.Parse(dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
-                    fraiskilometrique.idFraisForfait = ((FraisForfait) ModelMission3.idlignefrais(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString())).id;
-                    context.LigneFraisForfait.Add(fraiskilometrique);
-                    try
-                    {
-                        context.SaveChanges();
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show(ex.Message.ToString());
-                    }
-
-                }
-                MessageBox.Show("les enregistrements ont ete effectue!"); */
-            /*    foreach (DataGridViewRow row in dgvfraiskilometriques.Rows)
-                {
-                    var fraiskilometrique = new LigneFraisForfait();
-
-                    foreach (DataGridViewCell cell in row.Cells)
-                    {
-                        if(cell.ColumnIndex == 1)
-                        {
-                            fraiskilometrique.idVisiteur = txtMatricule.Text;
-                            fraiskilometrique.mois = date;
-                            fraiskilometrique.quantite = (int)cell.Value;
-
-
-
-                        }
-                        if (cell.ColumnIndex == 2)
-                        {
-                            string libelle = (string)cell.Value.ToString();
-                            fraiskilometrique.idFraisForfait = ModelMission3.idlignefrais(libelle.ToString()).ToString();
-                        }
-
-
-
-                    }
-                }  */
+          
             string date =  DateTime.Now.Month + DateTime.Now.Year.ToString();
            if( ModelMission3.enregfichefrais(txtMatricule.Text, date, "CR", "0"))
             {
@@ -362,11 +249,20 @@ namespace Swiss_Visite
                     ModelMission3.enregfraiskm(txtMatricule.Text, date, ((FraisForfait)ModelMission3.idlignefrais(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString())).id , dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
 
                 }
-
+                MessageBox.Show("Enregistrement effectue");
+            }
+           else
+            {
+                MessageBox.Show("Une fiche a deje ete cree pour ce mois");
             }
             
 
             
+
+        }
+
+        private void BindingNavigator1_RefreshItems(object sender, EventArgs e)
+        {
 
         }
     }

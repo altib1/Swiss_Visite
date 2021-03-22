@@ -130,11 +130,12 @@ namespace Swiss_Visite
         // methodes de enregistrement des données dans la bdd
         public static bool enregfichefrais( string idvisiteur, string mois, string etat, string nbjustificatifs)
         {
-            bool vretour = true;
+            bool vretour = false;
             try
             {
                 if (veriffraisforfait(idvisiteur, mois) == null)
                 {
+
                    fichefrais lafiche = new fichefrais();
 
                     lafiche.idVisiteur = idvisiteur;
@@ -152,11 +153,12 @@ namespace Swiss_Visite
                         maConnexion.Dispose();
                         init();
                     }
+                    vretour = true;
                 }
             }
             catch (Exception)
             {
-                vretour = false;
+               
             }
             return vretour;
             
@@ -268,6 +270,17 @@ namespace Swiss_Visite
                 maConnexion.Dispose();
                 init();
             }
+
+        }
+
+        // tout les fiches frais 
+
+        public static Object ToutesLesfichesfrais()
+        {
+            var LQuery = maConnexion.fichefrais.ToList()
+                           .Select(x => new { x.mois, x.nbJustificatifs, x.dateModif, x.Etat.libelle })
+                           .OrderBy(x => x.mois);
+            return LQuery.ToList();
 
         }
 

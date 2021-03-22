@@ -33,7 +33,15 @@ namespace Swiss_Visite
 
                 cmbMois.Items.Add(i);
             }
-            
+
+            bsfichefrais.DataSource = ModelMission3.ToutesLesfichesfrais();
+            dgvfichesfrais.DataSource = bsfichefrais;
+            dgvfichesfrais.Columns[0].HeaderText = "Mois";
+            dgvfichesfrais.Columns[1].HeaderText = "NB justificatifs";
+            dgvfichesfrais.Columns[2].HeaderText = "date de modification";
+            dgvfichesfrais.Columns[3].HeaderText = "l'etat";
+
+
 
         }
 

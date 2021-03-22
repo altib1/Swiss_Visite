@@ -33,15 +33,17 @@
             this.bsNom = new System.Windows.Forms.BindingSource(this.components);
             this.btncreer = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvfichesfrais = new System.Windows.Forms.DataGridView();
             this.cmbMois = new System.Windows.Forms.ComboBox();
             this.lblmois = new System.Windows.Forms.Label();
             this.btnModif = new System.Windows.Forms.Button();
             this.bsComboMois = new System.Windows.Forms.BindingSource(this.components);
             this.lblNom = new System.Windows.Forms.Label();
+            this.bsfichefrais = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsNom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfichesfrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsComboMois)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsfichefrais)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,13 +75,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Le Menu";
             // 
-            // dataGridView1
+            // dgvfichesfrais
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(215, 80);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(573, 358);
-            this.dataGridView1.TabIndex = 4;
+            this.dgvfichesfrais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvfichesfrais.Location = new System.Drawing.Point(215, 80);
+            this.dgvfichesfrais.Name = "dgvfichesfrais";
+            this.dgvfichesfrais.Size = new System.Drawing.Size(573, 358);
+            this.dgvfichesfrais.TabIndex = 4;
             // 
             // cmbMois
             // 
@@ -125,7 +127,7 @@
             this.Controls.Add(this.btnModif);
             this.Controls.Add(this.lblmois);
             this.Controls.Add(this.cmbMois);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvfichesfrais);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btncreer);
             this.Controls.Add(this.label1);
@@ -133,8 +135,9 @@
             this.Text = "FormMenuMission3";
             this.Load += new System.EventHandler(this.FormMenuMission3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsNom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfichesfrais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsComboMois)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsfichefrais)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,11 +149,12 @@
         private System.Windows.Forms.BindingSource bsNom;
         private System.Windows.Forms.Button btncreer;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvfichesfrais;
         private System.Windows.Forms.ComboBox cmbMois;
         private System.Windows.Forms.Label lblmois;
         private System.Windows.Forms.Button btnModif;
         private System.Windows.Forms.BindingSource bsComboMois;
         private System.Windows.Forms.Label lblNom;
+        private System.Windows.Forms.BindingSource bsfichefrais;
     }
 }
