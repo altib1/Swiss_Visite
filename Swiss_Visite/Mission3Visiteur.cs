@@ -265,6 +265,19 @@ namespace Swiss_Visite
         {
 
         }
+
+        public static void ThreadProchorsforfait()
+        {
+            Application.Run(new FraisHorsForfait());
+        }
+
+        private void Btnfraishorsforfait_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProchorsforfait));
+
+            t.Start();
+           
+        }
     }
 }
  

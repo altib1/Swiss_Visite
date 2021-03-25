@@ -76,6 +76,12 @@
     <Compile Include="FormMenuMission3.Designer.cs">
       <DependentUpon>FormMenuMission3.cs</DependentUpon>
     </Compile>
+    <Compile Include="FraisHorsForfait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FraisHorsForfait.Designer.cs">
+      <DependentUpon>FraisHorsForfait.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mission3Comptable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuMission3.resx">
       <DependentUpon>FormMenuMission3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FraisHorsForfait.resx">
+      <DependentUpon>FraisHorsForfait.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConexion.resx">
       <DependentUpon>frmConexion.cs</DependentUpon>
