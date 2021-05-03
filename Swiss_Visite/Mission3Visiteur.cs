@@ -16,6 +16,7 @@ namespace Swiss_Visite
         public Form2()
         {
             InitializeComponent();
+
         }
 
         private void TblVisiteur_Paint(object sender, PaintEventArgs e)
@@ -40,7 +41,8 @@ namespace Swiss_Visite
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
+
+
             Visiteur v2 = Model.rechercheVisiteur(Model.idclient);
             bsMatricule.DataSource = v2.idVisiteur.ToString();
             txtMatricule.Text = bsMatricule.DataSource.ToString();
@@ -103,7 +105,7 @@ namespace Swiss_Visite
             }
 
             txtTotalMidi.Text = (double.Parse(numMidi.Value.ToString()) * double.Parse(txtMontantMidi.Text)).ToString();
-            
+
         }
 
         private void DgvForfait_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -234,30 +236,26 @@ namespace Swiss_Visite
         private void BtnValiderfichefrais_Click(object sender, EventArgs e)
         {
 
-          
-            string date =  DateTime.Now.Month + DateTime.Now.Year.ToString();
-           if( ModelMission3.enregfichefrais(txtMatricule.Text, date, "CR", "0"))
-            {
-                ModelMission3.enregnuite(txtMatricule.Text, date, "NUI", numNuite.Value.ToString());
-                ModelMission3.enregmidi(txtMatricule.Text, date, "REM", numMidi.Value.ToString());
-                ModelMission3.enregsoir(txtMatricule.Text, date, "RES", numSoir.Value.ToString());
-                ModelMission3.enregforfnuite(txtMatricule.Text, date, "ETP", numForfaitnuite.Value.ToString());
+
+            string date = DateTime.Now.Month + DateTime.Now.Year.ToString();
+                ModelMission3.enregnuite(txtMatricule.Text, "62021", "NUI", numNuite.Value.ToString());
+                ModelMission3.enregmidi(txtMatricule.Text, "62021", "REM", numMidi.Value.ToString());
+                ModelMission3.enregsoir(txtMatricule.Text, "62021", "RES", numSoir.Value.ToString());
+                ModelMission3.enregforfnuite(txtMatricule.Text, "62021", "ETP", numForfaitnuite.Value.ToString());
                 for (int i = 0; i < dgvfraiskilometriques.Rows.Count - 1; i++)
                 {
                     MessageBox.Show(dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
                     MessageBox.Show(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString());
-                    ModelMission3.enregfraiskm(txtMatricule.Text, date, ((FraisForfait)ModelMission3.idlignefrais(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString())).id , dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
+                    ModelMission3.enregfraiskm(txtMatricule.Text, "62021", ((FraisForfait)ModelMission3.idlignefrais(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString())).id , dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
 
                 }
                 MessageBox.Show("Enregistrement effectue");
-            }
-           else
-            {
-                MessageBox.Show("Une fiche a deje ete cree pour ce mois");
-            }
-            
 
-            
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
+
+            t.Start();
+            this.Close();
+
 
         }
 

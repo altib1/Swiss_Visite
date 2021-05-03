@@ -46,5 +46,67 @@ namespace Swiss_Visite
 
             this.Close();
         }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+           // string a = ((FraisForfait)bsModedetransport.Current).montant.ToString();
+           // double b = (double.Parse(txtQuantiteKilometres.Text) * double.Parse(a));
+           // cboModeDeTransport.SelectedItem = dgvfraiskilometriques.SelectedRows[0].Cells[1].Value;
+            dgvfraisHorsForfait.SelectedRows[0].Cells[1].Value = nmMontant.Text;
+            dgvfraisHorsForfait.SelectedRows[0].Cells[0].Value = lblLibelle.Text;
+           
+        }
+
+        private void dgvfraisHorsForfait_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvfraisHorsForfait.Rows.Count == 0)
+            {
+                lblLibelle.Text = dgvfraisHorsForfait.SelectedRows[0].Cells[0].Value.ToString();
+                nmMontant.Text = dgvfraisHorsForfait.SelectedRows[0].Cells[1].Value.ToString();
+            }
+        }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            if (dgvfraisHorsForfait.CurrentRow.Selected == true && dgvfraisHorsForfait.Rows.Count > 1 && dgvfraisHorsForfait.Rows != null)
+            {
+                if (MessageBox.Show("voulez vous vraiement suprimer ?", "Confirmer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int rowIndex = dgvfraisHorsForfait.CurrentCell.RowIndex;
+                   dgvfraisHorsForfait.Rows.RemoveAt(rowIndex);
+                }
+                else
+                {
+                    // user clicked no
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selectionner la ligne que vous voulez supprimer");
+            }
+        }
+
+        private void btnValider_Click(object sender, EventArgs e)
+        {
+            string date = DateTime.Now.Month + DateTime.Now.Year.ToString();
+            Visiteur v2 = Model.rechercheVisiteur(Model.idclient);
+            string matricule = v2.idVisiteur.ToString();
+
+            for (int i = 0; i < dgvfraisHorsForfait.Rows.Count - 1; i++)
+            {
+                MessageBox.Show(dgvfraisHorsForfait.Rows[i].Cells[0].Value.ToString());
+                MessageBox.Show(dgvfraisHorsForfait.Rows[i].Cells[1].Value.ToString());
+                ModelMission3.enregfraishorsforfait(i.ToString(), matricule, "62021", dgvfraisHorsForfait.Rows[i].Cells[0].Value.ToString(), dgvfraisHorsForfait.Rows[i].Cells[1].Value.ToString());
+
+
+            }
+
+            this.Close();
+        }
+
+        private void FraisHorsForfait_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

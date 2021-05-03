@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="17b0eaeaed2744aa9b7ba6a2c28410ff" Name="Diagram1">
+        <EntityTypeShape EntityType="BALNModel1.Etat" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.FAMILLE" Width="1.5" PointX="6" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.fichefrais" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.FraisForfait" Width="1.5" PointX="8.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.Laboratoire" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.LigneFraisForfait" Width="1.5" PointX="10.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.LigneFraisHorsForfait" Width="1.5" PointX="7.5" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.MEDECIN" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.MEDICAMENT" Width="1.5" PointX="8.25" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.MOTIF" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.OFFRIR" Width="1.5" PointX="10.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.RAPPORT" Width="1.5" PointX="8.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.Region" Width="1.5" PointX="7.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.Secteur" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.SPECIALITE" Width="1.5" PointX="3.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.sysdiagrams" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BALNModel1.Visiteur" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="BALNModel1.FK__fichefrai__idEta__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.medicament_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.FK__fichefrai__idVis__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.FK__LigneFraisForfai__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.FK__LigneFraisHorsFo__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.FK__LigneFrai__idFra__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.FK_Laboratoire" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.medecin_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.rapport_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.offrir_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.rapport_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.offrir_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.rapport_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.FK_SECTEUR" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.FK_VISITEUR" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.FK_VISITEURSECTEUR" ManuallyRouted="false" />
+        <AssociationConnector Association="BALNModel1.Travailler" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

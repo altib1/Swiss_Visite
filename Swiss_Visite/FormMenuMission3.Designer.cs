@@ -82,6 +82,7 @@
             this.dgvfichesfrais.Name = "dgvfichesfrais";
             this.dgvfichesfrais.Size = new System.Drawing.Size(573, 358);
             this.dgvfichesfrais.TabIndex = 4;
+            this.dgvfichesfrais.CurrentCellChanged += new System.EventHandler(this.dgvfichesfrais_CurrentCellChanged);
             // 
             // cmbMois
             // 

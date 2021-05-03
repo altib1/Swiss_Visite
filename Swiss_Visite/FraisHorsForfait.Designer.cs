@@ -30,12 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgvfraisHorsForfait = new System.Windows.Forms.DataGridView();
+            this.Libelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Montant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblLibelle = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.nmMontant = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.Libelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Montant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
@@ -66,6 +66,19 @@
             this.dgvfraisHorsForfait.Name = "dgvfraisHorsForfait";
             this.dgvfraisHorsForfait.Size = new System.Drawing.Size(480, 70);
             this.dgvfraisHorsForfait.TabIndex = 1;
+            this.dgvfraisHorsForfait.SelectionChanged += new System.EventHandler(this.dgvfraisHorsForfait_SelectionChanged);
+            // 
+            // Libelle
+            // 
+            this.Libelle.HeaderText = "Libelle";
+            this.Libelle.Name = "Libelle";
+            this.Libelle.Width = 200;
+            // 
+            // Montant
+            // 
+            this.Montant.HeaderText = "Montant";
+            this.Montant.Name = "Montant";
+            this.Montant.Width = 200;
             // 
             // lblLibelle
             // 
@@ -103,18 +116,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Le Montant :";
             // 
-            // Libelle
-            // 
-            this.Libelle.HeaderText = "Libelle";
-            this.Libelle.Name = "Libelle";
-            this.Libelle.Width = 200;
-            // 
-            // Montant
-            // 
-            this.Montant.HeaderText = "Montant";
-            this.Montant.Name = "Montant";
-            this.Montant.Width = 200;
-            // 
             // btnAjouter
             // 
             this.btnAjouter.Location = new System.Drawing.Point(538, 263);
@@ -133,6 +134,7 @@
             this.btnModifier.TabIndex = 7;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnSupprimer
             // 
@@ -142,6 +144,7 @@
             this.btnSupprimer.TabIndex = 8;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // btnValider
             // 
@@ -151,6 +154,7 @@
             this.btnValider.TabIndex = 10;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = true;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // btnAnnuler
             // 
@@ -180,6 +184,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FraisHorsForfait";
             this.Text = "FraisHorsForfait";
+            this.Load += new System.EventHandler(this.FraisHorsForfait_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvfraisHorsForfait)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmMontant)).EndInit();
             this.ResumeLayout(false);

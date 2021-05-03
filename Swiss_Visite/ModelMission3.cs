@@ -9,7 +9,7 @@ namespace Swiss_Visite
     public static class ModelMission3
     {
        
-        public static BALNEntities maConnexion;
+        public static BALNHome maConnexion;
      
 
        
@@ -17,7 +17,7 @@ namespace Swiss_Visite
         public static void init()
         {
             /* Instantiation d’un objet de la classe typée chaine de connexion SqlConnection */
-            maConnexion = new BALNEntities();
+            maConnexion = new BALNHome();
             
         }
 
@@ -57,17 +57,18 @@ namespace Swiss_Visite
             return maConnexion.FraisForfait.ToList();
         }
 
-        public static fichefrais recherchefichefrais(string vid)
+        public static Object recherchefichefrais(string vid)
         {
 
             var LQuery = maConnexion.fichefrais.ToList()
 
                            .Where(x => x.idVisiteur == vid)
-                           .Where(x => x.mois == DateTime.Now.Month.ToString());
-                         
+                           .Select(x => x.mois);
+
+
             // .Select(x => new {x.id, x.libelle });
 
-            return LQuery.ToList()[0];
+            return LQuery.ToList();
         }
 
         public static fichefrais ajouterfichefrais(string vid, string mois)
@@ -113,8 +114,8 @@ namespace Swiss_Visite
 
             var LQuery = maConnexion.fichefrais.ToList()
 
-                           .Where(x => x.idVisiteur == idvisiteur)
-                           .Where(x => x.mois == mois);
+                           .Where(x => x.idVisiteur == idvisiteur && x.mois == mois);
+                           
 
             // .Select(x => new {x.id, x.libelle });
             if (LQuery.ToList().Count > 0)
@@ -135,21 +136,25 @@ namespace Swiss_Visite
             {
                 if (veriffraisforfait(idvisiteur, mois) == null)
                 {
+                   
 
-                   fichefrais lafiche = new fichefrais();
+                    fichefrais lafiche = new fichefrais();
 
                     lafiche.idVisiteur = idvisiteur;
                     lafiche.mois = mois;
                     lafiche.idEtat = etat;
                     lafiche.nbJustificatifs = int.Parse(nbjustificatifs);
                     lafiche.dateModif = DateTime.Now;
+                    
                     maConnexion.fichefrais.Add(lafiche);
                     try
                     {
                         maConnexion.SaveChanges();
+                        
                     }
                     catch (Exception ex)
                     {
+                        
                         maConnexion.Dispose();
                         init();
                     }
@@ -272,6 +277,29 @@ namespace Swiss_Visite
             }
 
         }
+        // enregistrement des frais hors forfait
+        public static void enregfraishorsforfait(string iteration, string idvisiteurs, string mois, string libelle, string montant)
+        {
+            LigneFraisHorsForfait fraiskm = new LigneFraisHorsForfait();
+
+            fraiskm.idVisiteur = idvisiteurs;
+            fraiskm.mois = mois;
+            fraiskm.date = DateTime.Now;
+            fraiskm.montant = int.Parse(montant);
+            fraiskm.libelle = libelle;
+            fraiskm.id = int.Parse(iteration);
+            maConnexion.LigneFraisHorsForfait.Add(fraiskm);
+            try
+            {
+                maConnexion.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                maConnexion.Dispose();
+                init();
+            }
+
+        }
 
         // tout les fiches frais 
 
@@ -280,7 +308,16 @@ namespace Swiss_Visite
             var LQuery = maConnexion.fichefrais.ToList()
                            .Select(x => new { x.mois, x.nbJustificatifs, x.dateModif, x.Etat.libelle })
                            .OrderBy(x => x.mois);
-            return LQuery.ToList();
+            
+
+            if (LQuery.ToList().Count > 0)
+            {
+                return LQuery.ToList()[0];
+            }
+            else
+            {
+                return null;
+            }
 
         }
 
