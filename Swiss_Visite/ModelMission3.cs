@@ -303,12 +303,120 @@ namespace Swiss_Visite
 
         // tout les fiches frais 
 
-        public static Object ToutesLesfichesfrais()
+        public static Object ToutesLesfichesfrais(string id)
         {
             var LQuery = maConnexion.fichefrais.ToList()
-                           .Select(x => new { x.mois, x.nbJustificatifs, x.dateModif, x.Etat.libelle })
-                           .OrderBy(x => x.mois);
-            
+
+                           .Where(x => x.idVisiteur == id)
+                           .Select(x => new { x.idVisiteur, x.dateModif, x.mois });
+
+
+            if (LQuery.ToList().Count > 0)
+            {
+                return LQuery.ToList();
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+
+        //lignefraishorsforfait NUite
+
+
+        public static LigneFraisForfait LignefraisForfaitNUI(string id, string mois)
+        {
+            var LQuery = maConnexion.LigneFraisForfait.ToList()
+
+                           .Where(x => x.idVisiteur == id && x.mois == mois && x.idFraisForfait == "NUI");
+                           
+
+
+            if (LQuery.ToList().Count > 0)
+            {
+                return LQuery.ToList()[0];
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+        //ligen frais forfait midi
+        public static LigneFraisForfait LignefraisForfaitREM(string id, string mois)
+        {
+            var LQuery = maConnexion.LigneFraisForfait.ToList()
+
+                           .Where(x => x.idVisiteur == id && x.mois == mois && x.idFraisForfait == "REM");
+
+
+
+            if (LQuery.ToList().Count > 0)
+            {
+                return LQuery.ToList()[0];
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+        //ligne frais forfait soir
+        public static LigneFraisForfait LignefraisForfaitRES(string id, string mois)
+        {
+            var LQuery = maConnexion.LigneFraisForfait.ToList()
+
+                           .Where(x => x.idVisiteur == id && x.mois == mois && x.idFraisForfait == "RES");
+                          
+
+            if (LQuery.ToList().Count > 0)
+            {
+                return LQuery.ToList()[0];
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+
+        //ligen frais forfait frofait nuite
+        public static LigneFraisForfait LignefraisForfaitETP(string id, string mois)
+        {
+            var LQuery = maConnexion.LigneFraisForfait.ToList()
+
+                           .Where(x => x.idVisiteur == id && x.mois == mois && x.idFraisForfait == "ETP");
+                           
+
+
+            if (LQuery.ToList().Count > 0)
+            {
+                return LQuery.ToList()[0];
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+
+        //ligne frais hors forfait 
+
+        public static LigneFraisForfait LignefraisForfaitkilometrique(string id, string mois)
+        {
+            var LQuery = maConnexion.LigneFraisForfait.ToList()
+
+                           .Where(x => x.idVisiteur == id && x.mois == mois && x.idFraisForfait == x.FraisForfait.id
+                              && x.FraisForfait.Kilometrique == true);
+                          
+
+
 
             if (LQuery.ToList().Count > 0)
             {

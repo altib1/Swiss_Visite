@@ -1,6 +1,7 @@
-﻿namespace Swiss_Visite
+﻿
+namespace Swiss_Visite
 {
-    partial class Form2
+    partial class VisiteurModifierfraisforfait
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +30,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.btnfraishorsforfait = new System.Windows.Forms.Button();
+            this.btnAnnulerfraistransport = new System.Windows.Forms.Button();
+            this.btnValiderfichefrais = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbmois = new System.Windows.Forms.ComboBox();
             this.txtQuantiteKilometres = new System.Windows.Forms.NumericUpDown();
@@ -73,9 +77,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbldescription = new System.Windows.Forms.Label();
             this.lblTitre = new System.Windows.Forms.Label();
-            this.btnValiderfichefrais = new System.Windows.Forms.Button();
-            this.btnAnnulerfraistransport = new System.Windows.Forms.Button();
-            this.btnfraishorsforfait = new System.Windows.Forms.Button();
             this.bsMatricule = new System.Windows.Forms.BindingSource(this.components);
             this.bsNom = new System.Windows.Forms.BindingSource(this.components);
             this.bsMois = new System.Windows.Forms.BindingSource(this.components);
@@ -88,6 +89,10 @@
             this.bsModedetransport = new System.Windows.Forms.BindingSource(this.components);
             this.bsdgvtransport = new System.Windows.Forms.BindingSource(this.components);
             this.bsForfaitnuite = new System.Windows.Forms.BindingSource(this.components);
+            this.bsNuiNum = new System.Windows.Forms.BindingSource(this.components);
+            this.bsResNum = new System.Windows.Forms.BindingSource(this.components);
+            this.bsRemNum = new System.Windows.Forms.BindingSource(this.components);
+            this.bsEtpNum = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuantiteKilometres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvfraiskilometriques)).BeginInit();
@@ -108,7 +113,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsModedetransport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsdgvtransport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsForfaitnuite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsNuiNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsResNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRemNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEtpNum)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnfraishorsforfait
+            // 
+            this.btnfraishorsforfait.Location = new System.Drawing.Point(65, 651);
+            this.btnfraishorsforfait.Name = "btnfraishorsforfait";
+            this.btnfraishorsforfait.Size = new System.Drawing.Size(155, 49);
+            this.btnfraishorsforfait.TabIndex = 8;
+            this.btnfraishorsforfait.Text = "Ajouter des frais hors forfait";
+            this.btnfraishorsforfait.UseVisualStyleBackColor = true;
+            this.btnfraishorsforfait.Click += new System.EventHandler(this.btnfraishorsforfait_Click);
+            // 
+            // btnAnnulerfraistransport
+            // 
+            this.btnAnnulerfraistransport.Location = new System.Drawing.Point(506, 651);
+            this.btnAnnulerfraistransport.Name = "btnAnnulerfraistransport";
+            this.btnAnnulerfraistransport.Size = new System.Drawing.Size(98, 32);
+            this.btnAnnulerfraistransport.TabIndex = 7;
+            this.btnAnnulerfraistransport.Text = "Annuler";
+            this.btnAnnulerfraistransport.UseVisualStyleBackColor = true;
+            this.btnAnnulerfraistransport.Click += new System.EventHandler(this.btnAnnulerfraistransport_Click);
+            // 
+            // btnValiderfichefrais
+            // 
+            this.btnValiderfichefrais.Location = new System.Drawing.Point(621, 651);
+            this.btnValiderfichefrais.Name = "btnValiderfichefrais";
+            this.btnValiderfichefrais.Size = new System.Drawing.Size(114, 32);
+            this.btnValiderfichefrais.TabIndex = 6;
+            this.btnValiderfichefrais.Text = "Valider";
+            this.btnValiderfichefrais.UseVisualStyleBackColor = true;
+            this.btnValiderfichefrais.Click += new System.EventHandler(this.btnValiderfichefrais_Click);
             // 
             // panel1
             // 
@@ -133,10 +172,10 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lbldescription);
             this.panel1.Controls.Add(this.lblTitre);
-            this.panel1.Location = new System.Drawing.Point(69, 65);
+            this.panel1.Location = new System.Drawing.Point(65, 48);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(670, 597);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 5;
             // 
             // cbmois
             // 
@@ -163,7 +202,7 @@
             this.btnSupprimer.TabIndex = 26;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
-            this.btnSupprimer.Click += new System.EventHandler(this.BtnSupprimer_Click);
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // btnModifier
             // 
@@ -173,7 +212,7 @@
             this.btnModifier.TabIndex = 25;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
-            this.btnModifier.Click += new System.EventHandler(this.BtnModifier_Click);
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnAjoutertrans
             // 
@@ -183,7 +222,7 @@
             this.btnAjoutertrans.TabIndex = 24;
             this.btnAjoutertrans.Text = "Ajouter";
             this.btnAjoutertrans.UseVisualStyleBackColor = true;
-            this.btnAjoutertrans.Click += new System.EventHandler(this.BtnAjoutertrans_Click);
+            this.btnAjoutertrans.Click += new System.EventHandler(this.btnAjoutertrans_Click);
             // 
             // lblModetrans
             // 
@@ -211,7 +250,6 @@
             this.cboModeDeTransport.Name = "cboModeDeTransport";
             this.cboModeDeTransport.Size = new System.Drawing.Size(187, 21);
             this.cboModeDeTransport.TabIndex = 19;
-            this.cboModeDeTransport.SelectedIndexChanged += new System.EventHandler(this.CboModeDeTransport_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -237,8 +275,7 @@
             this.dgvfraiskilometriques.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvfraiskilometriques.Size = new System.Drawing.Size(665, 101);
             this.dgvfraiskilometriques.TabIndex = 16;
-            this.dgvfraiskilometriques.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick_1);
-            this.dgvfraiskilometriques.SelectionChanged += new System.EventHandler(this.Dgvfraiskilometriques_SelectionChanged);
+            this.dgvfraiskilometriques.SelectionChanged += new System.EventHandler(this.dgvfraiskilometriques_SelectionChanged);
             // 
             // Quantite
             // 
@@ -266,7 +303,7 @@
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.1282F));
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.8718F));
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 298F));
-            this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 222F));
+            this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 214F));
             this.tblVisiteur.Controls.Add(this.label3, 0, 4);
             this.tblVisiteur.Controls.Add(this.numSoir, 1, 3);
             this.tblVisiteur.Controls.Add(this.numMidi, 1, 2);
@@ -298,7 +335,6 @@
             this.tblVisiteur.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblVisiteur.Size = new System.Drawing.Size(655, 156);
             this.tblVisiteur.TabIndex = 15;
-            this.tblVisiteur.Paint += new System.Windows.Forms.PaintEventHandler(this.TblVisiteur_Paint_1);
             // 
             // label3
             // 
@@ -312,25 +348,25 @@
             // 
             // numSoir
             // 
-            this.numSoir.Location = new System.Drawing.Point(85, 100);
+            this.numSoir.Location = new System.Drawing.Point(90, 100);
             this.numSoir.Name = "numSoir";
             this.numSoir.ReadOnly = true;
-            this.numSoir.Size = new System.Drawing.Size(32, 20);
+            this.numSoir.Size = new System.Drawing.Size(35, 20);
             this.numSoir.TabIndex = 30;
-            this.numSoir.ValueChanged += new System.EventHandler(this.NumSoir_ValueChanged);
+            this.numSoir.ValueChanged += new System.EventHandler(this.numSoir_ValueChanged);
             // 
             // numMidi
             // 
-            this.numMidi.Location = new System.Drawing.Point(85, 68);
+            this.numMidi.Location = new System.Drawing.Point(90, 68);
             this.numMidi.Name = "numMidi";
             this.numMidi.ReadOnly = true;
-            this.numMidi.Size = new System.Drawing.Size(32, 20);
+            this.numMidi.Size = new System.Drawing.Size(35, 20);
             this.numMidi.TabIndex = 29;
-            this.numMidi.ValueChanged += new System.EventHandler(this.NumMidi_ValueChanged);
+            this.numMidi.ValueChanged += new System.EventHandler(this.numMidi_ValueChanged);
             // 
             // txtTotalRepasSoir
             // 
-            this.txtTotalRepasSoir.Location = new System.Drawing.Point(427, 100);
+            this.txtTotalRepasSoir.Location = new System.Drawing.Point(435, 100);
             this.txtTotalRepasSoir.Name = "txtTotalRepasSoir";
             this.txtTotalRepasSoir.ReadOnly = true;
             this.txtTotalRepasSoir.Size = new System.Drawing.Size(101, 20);
@@ -338,7 +374,7 @@
             // 
             // txtMontantSoir
             // 
-            this.txtMontantSoir.Location = new System.Drawing.Point(126, 100);
+            this.txtMontantSoir.Location = new System.Drawing.Point(134, 100);
             this.txtMontantSoir.Name = "txtMontantSoir";
             this.txtMontantSoir.ReadOnly = true;
             this.txtMontantSoir.Size = new System.Drawing.Size(291, 20);
@@ -346,7 +382,7 @@
             // 
             // txtTotalMidi
             // 
-            this.txtTotalMidi.Location = new System.Drawing.Point(427, 68);
+            this.txtTotalMidi.Location = new System.Drawing.Point(435, 68);
             this.txtTotalMidi.Name = "txtTotalMidi";
             this.txtTotalMidi.ReadOnly = true;
             this.txtTotalMidi.Size = new System.Drawing.Size(101, 20);
@@ -354,7 +390,7 @@
             // 
             // txtMontantMidi
             // 
-            this.txtMontantMidi.Location = new System.Drawing.Point(126, 68);
+            this.txtMontantMidi.Location = new System.Drawing.Point(134, 68);
             this.txtMontantMidi.Name = "txtMontantMidi";
             this.txtMontantMidi.ReadOnly = true;
             this.txtMontantMidi.Size = new System.Drawing.Size(291, 20);
@@ -362,7 +398,7 @@
             // 
             // txtTotalNuit
             // 
-            this.txtTotalNuit.Location = new System.Drawing.Point(427, 44);
+            this.txtTotalNuit.Location = new System.Drawing.Point(435, 44);
             this.txtTotalNuit.Name = "txtTotalNuit";
             this.txtTotalNuit.ReadOnly = true;
             this.txtTotalNuit.Size = new System.Drawing.Size(101, 20);
@@ -383,9 +419,9 @@
             this.lblQuantite.AutoSize = true;
             this.lblQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantite.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblQuantite.Location = new System.Drawing.Point(85, 8);
+            this.lblQuantite.Location = new System.Drawing.Point(90, 8);
             this.lblQuantite.Name = "lblQuantite";
-            this.lblQuantite.Size = new System.Drawing.Size(29, 30);
+            this.lblQuantite.Size = new System.Drawing.Size(33, 30);
             this.lblQuantite.TabIndex = 11;
             this.lblQuantite.Text = "Quantité";
             // 
@@ -405,7 +441,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblTotal.Location = new System.Drawing.Point(427, 8);
+            this.lblTotal.Location = new System.Drawing.Point(435, 8);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(44, 16);
             this.lblTotal.TabIndex = 13;
@@ -430,11 +466,10 @@
             this.lblRepasSoir.Size = new System.Drawing.Size(52, 27);
             this.lblRepasSoir.TabIndex = 15;
             this.lblRepasSoir.Text = "Repas Soir";
-            this.lblRepasSoir.Click += new System.EventHandler(this.LblKilometrage_Click);
             // 
             // txtMontantNuit
             // 
-            this.txtMontantNuit.Location = new System.Drawing.Point(126, 44);
+            this.txtMontantNuit.Location = new System.Drawing.Point(134, 44);
             this.txtMontantNuit.Name = "txtMontantNuit";
             this.txtMontantNuit.ReadOnly = true;
             this.txtMontantNuit.Size = new System.Drawing.Size(291, 20);
@@ -448,7 +483,7 @@
             this.lblMontatnt.AutoSize = true;
             this.lblMontatnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontatnt.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblMontatnt.Location = new System.Drawing.Point(126, 8);
+            this.lblMontatnt.Location = new System.Drawing.Point(134, 8);
             this.lblMontatnt.Name = "lblMontatnt";
             this.lblMontatnt.Size = new System.Drawing.Size(292, 30);
             this.lblMontatnt.TabIndex = 12;
@@ -457,7 +492,7 @@
             // 
             // txtMontantForfaitnuite
             // 
-            this.txtMontantForfaitnuite.Location = new System.Drawing.Point(126, 130);
+            this.txtMontantForfaitnuite.Location = new System.Drawing.Point(134, 130);
             this.txtMontantForfaitnuite.Name = "txtMontantForfaitnuite";
             this.txtMontantForfaitnuite.ReadOnly = true;
             this.txtMontantForfaitnuite.Size = new System.Drawing.Size(292, 20);
@@ -465,7 +500,7 @@
             // 
             // txttotalForfaitnuite
             // 
-            this.txttotalForfaitnuite.Location = new System.Drawing.Point(427, 130);
+            this.txttotalForfaitnuite.Location = new System.Drawing.Point(435, 130);
             this.txttotalForfaitnuite.Name = "txttotalForfaitnuite";
             this.txttotalForfaitnuite.ReadOnly = true;
             this.txttotalForfaitnuite.Size = new System.Drawing.Size(101, 20);
@@ -473,21 +508,21 @@
             // 
             // numNuite
             // 
-            this.numNuite.Location = new System.Drawing.Point(85, 44);
+            this.numNuite.Location = new System.Drawing.Point(90, 44);
             this.numNuite.Name = "numNuite";
             this.numNuite.ReadOnly = true;
-            this.numNuite.Size = new System.Drawing.Size(32, 20);
+            this.numNuite.Size = new System.Drawing.Size(35, 20);
             this.numNuite.TabIndex = 28;
-            this.numNuite.ValueChanged += new System.EventHandler(this.NumNuite_ValueChanged);
+            this.numNuite.ValueChanged += new System.EventHandler(this.numNuite_ValueChanged);
             // 
             // numForfaitnuite
             // 
-            this.numForfaitnuite.Location = new System.Drawing.Point(85, 130);
+            this.numForfaitnuite.Location = new System.Drawing.Point(90, 130);
             this.numForfaitnuite.Name = "numForfaitnuite";
             this.numForfaitnuite.ReadOnly = true;
-            this.numForfaitnuite.Size = new System.Drawing.Size(32, 20);
+            this.numForfaitnuite.Size = new System.Drawing.Size(35, 20);
             this.numForfaitnuite.TabIndex = 31;
-            this.numForfaitnuite.ValueChanged += new System.EventHandler(this.NumForfaitnuite_ValueChanged);
+            this.numForfaitnuite.ValueChanged += new System.EventHandler(this.numForfaitnuite_ValueChanged);
             // 
             // txtPrenom
             // 
@@ -578,53 +613,18 @@
             this.lblTitre.Text = "ETAT DE FRAIS ENGAGES";
             this.lblTitre.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // btnValiderfichefrais
-            // 
-            this.btnValiderfichefrais.Location = new System.Drawing.Point(625, 668);
-            this.btnValiderfichefrais.Name = "btnValiderfichefrais";
-            this.btnValiderfichefrais.Size = new System.Drawing.Size(114, 32);
-            this.btnValiderfichefrais.TabIndex = 1;
-            this.btnValiderfichefrais.Text = "Valider";
-            this.btnValiderfichefrais.UseVisualStyleBackColor = true;
-            this.btnValiderfichefrais.Click += new System.EventHandler(this.BtnValiderfichefrais_Click);
-            // 
-            // btnAnnulerfraistransport
-            // 
-            this.btnAnnulerfraistransport.Location = new System.Drawing.Point(510, 668);
-            this.btnAnnulerfraistransport.Name = "btnAnnulerfraistransport";
-            this.btnAnnulerfraistransport.Size = new System.Drawing.Size(98, 32);
-            this.btnAnnulerfraistransport.TabIndex = 2;
-            this.btnAnnulerfraistransport.Text = "Annuler";
-            this.btnAnnulerfraistransport.UseVisualStyleBackColor = true;
-            this.btnAnnulerfraistransport.Click += new System.EventHandler(this.BtnAnnulerfraistransport_Click);
-            // 
-            // btnfraishorsforfait
-            // 
-            this.btnfraishorsforfait.Location = new System.Drawing.Point(69, 668);
-            this.btnfraishorsforfait.Name = "btnfraishorsforfait";
-            this.btnfraishorsforfait.Size = new System.Drawing.Size(155, 49);
-            this.btnfraishorsforfait.TabIndex = 4;
-            this.btnfraishorsforfait.Text = "Ajouter des frais hors forfait";
-            this.btnfraishorsforfait.UseVisualStyleBackColor = true;
-            this.btnfraishorsforfait.Click += new System.EventHandler(this.Btnfraishorsforfait_Click);
-            // 
-            // bsMois
-            // 
-            this.bsMois.CurrentChanged += new System.EventHandler(this.BindingSource1_CurrentChanged);
-            // 
-            // Form2
+            // VisiteurModifierfraisforfait
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(800, 740);
+            this.ClientSize = new System.Drawing.Size(800, 749);
             this.Controls.Add(this.btnfraishorsforfait);
             this.Controls.Add(this.btnAnnulerfraistransport);
             this.Controls.Add(this.btnValiderfichefrais);
             this.Controls.Add(this.panel1);
-            this.Name = "Form2";
-            this.Text = "Fiche de remboursement";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Name = "VisiteurModifierfraisforfait";
+            this.Text = "VisiteurModifierfraisforfait";
+            this.Load += new System.EventHandler(this.VisiteurModifierfraisforfait_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuantiteKilometres)).EndInit();
@@ -647,29 +647,37 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsModedetransport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsdgvtransport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsForfaitnuite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsNuiNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsResNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRemNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEtpNum)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Button btnfraishorsforfait;
+        private System.Windows.Forms.Button btnAnnulerfraistransport;
+        private System.Windows.Forms.Button btnValiderfichefrais;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblMois;
-        private System.Windows.Forms.TextBox txtNom;
-        private System.Windows.Forms.Label lblNom;
-        private System.Windows.Forms.TextBox txtMatricule;
-        private System.Windows.Forms.Label lblmatricule;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbldescription;
-        private System.Windows.Forms.Label lblTitre;
-        private System.Windows.Forms.BindingSource bsMatricule;
-        private System.Windows.Forms.BindingSource bsNom;
-        private System.Windows.Forms.BindingSource bsMois;
-        private System.Windows.Forms.BindingSource bsHorsforfait;
-        private System.Windows.Forms.BindingSource bsForfait;
-        private System.Windows.Forms.TextBox txtPrenom;
-        private System.Windows.Forms.BindingSource bsprenom;
+        private System.Windows.Forms.ComboBox cbmois;
+        private System.Windows.Forms.NumericUpDown txtQuantiteKilometres;
+        private System.Windows.Forms.Button btnSupprimer;
+        private System.Windows.Forms.Button btnModifier;
+        private System.Windows.Forms.Button btnAjoutertrans;
+        private System.Windows.Forms.Label lblModetrans;
+        private System.Windows.Forms.Label lblqkilometrique;
+        private System.Windows.Forms.ComboBox cboModeDeTransport;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.DataGridView dgvfraiskilometriques;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ModeDeTransport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalKilometrique;
         private System.Windows.Forms.TableLayoutPanel tblVisiteur;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown numSoir;
+        private System.Windows.Forms.NumericUpDown numMidi;
         private System.Windows.Forms.TextBox txtTotalRepasSoir;
         private System.Windows.Forms.TextBox txtMontantSoir;
         private System.Windows.Forms.TextBox txtTotalMidi;
@@ -683,34 +691,34 @@
         private System.Windows.Forms.Label lblRepasSoir;
         private System.Windows.Forms.TextBox txtMontantNuit;
         private System.Windows.Forms.Label lblMontatnt;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtMontantForfaitnuite;
+        private System.Windows.Forms.TextBox txttotalForfaitnuite;
+        private System.Windows.Forms.NumericUpDown numNuite;
+        private System.Windows.Forms.NumericUpDown numForfaitnuite;
+        private System.Windows.Forms.TextBox txtPrenom;
+        private System.Windows.Forms.Label lblMois;
+        private System.Windows.Forms.TextBox txtNom;
+        private System.Windows.Forms.Label lblNom;
+        private System.Windows.Forms.TextBox txtMatricule;
+        private System.Windows.Forms.Label lblmatricule;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbldescription;
+        private System.Windows.Forms.Label lblTitre;
+        private System.Windows.Forms.BindingSource bsMatricule;
+        private System.Windows.Forms.BindingSource bsNom;
+        private System.Windows.Forms.BindingSource bsMois;
+        private System.Windows.Forms.BindingSource bsHorsforfait;
+        private System.Windows.Forms.BindingSource bsForfait;
+        private System.Windows.Forms.BindingSource bsprenom;
         private System.Windows.Forms.BindingSource bsNuit;
         private System.Windows.Forms.BindingSource bsMidi;
         private System.Windows.Forms.BindingSource bsSoir;
-        private System.Windows.Forms.ComboBox cboModeDeTransport;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantite;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ModeDeTransport;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalKilometrique;
         private System.Windows.Forms.BindingSource bsModedetransport;
-        public System.Windows.Forms.DataGridView dgvfraiskilometriques;
-        private System.Windows.Forms.Button btnAjoutertrans;
-        private System.Windows.Forms.Label lblModetrans;
-        private System.Windows.Forms.Label lblqkilometrique;
-        private System.Windows.Forms.Button btnValiderfichefrais;
-        private System.Windows.Forms.Button btnAnnulerfraistransport;
         private System.Windows.Forms.BindingSource bsdgvtransport;
-        private System.Windows.Forms.Button btnSupprimer;
-        private System.Windows.Forms.Button btnModifier;
-        private System.Windows.Forms.NumericUpDown txtQuantiteKilometres;
-        private System.Windows.Forms.TextBox txtMontantForfaitnuite;
-        private System.Windows.Forms.TextBox txttotalForfaitnuite;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numSoir;
-        private System.Windows.Forms.NumericUpDown numMidi;
-        private System.Windows.Forms.NumericUpDown numNuite;
-        private System.Windows.Forms.NumericUpDown numForfaitnuite;
         private System.Windows.Forms.BindingSource bsForfaitnuite;
-        private System.Windows.Forms.ComboBox cbmois;
-        private System.Windows.Forms.Button btnfraishorsforfait;
+        private System.Windows.Forms.BindingSource bsNuiNum;
+        private System.Windows.Forms.BindingSource bsResNum;
+        private System.Windows.Forms.BindingSource bsRemNum;
+        private System.Windows.Forms.BindingSource bsEtpNum;
     }
 }

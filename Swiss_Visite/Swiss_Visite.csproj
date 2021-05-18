@@ -91,6 +91,12 @@
     <Compile Include="FormMenuMission3.Designer.cs">
       <DependentUpon>FormMenuMission3.cs</DependentUpon>
     </Compile>
+    <Compile Include="FraisHorsForafaitModifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FraisHorsForafaitModifier.Designer.cs">
+      <DependentUpon>FraisHorsForafaitModifier.cs</DependentUpon>
+    </Compile>
     <Compile Include="FraisHorsForfait.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,11 +195,20 @@
     <Compile Include="Visiteur.cs">
       <DependentUpon>BALNHome.tt</DependentUpon>
     </Compile>
+    <Compile Include="VisiteurModifierfraisforfait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisiteurModifierfraisforfait.Designer.cs">
+      <DependentUpon>VisiteurModifierfraisforfait.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuMission3.resx">
       <DependentUpon>FormMenuMission3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FraisHorsForafaitModifier.resx">
+      <DependentUpon>FraisHorsForafaitModifier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FraisHorsForfait.resx">
       <DependentUpon>FraisHorsForfait.cs</DependentUpon>
@@ -219,6 +234,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VisiteurModifierfraisforfait.resx">
+      <DependentUpon>VisiteurModifierfraisforfait.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="BALNHome.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BALNHome.Designer.cs</LastGenOutput>

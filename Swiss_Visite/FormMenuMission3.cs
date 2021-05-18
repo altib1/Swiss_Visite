@@ -12,6 +12,7 @@ namespace Swiss_Visite
 {
     public partial class FormMenuMission3 : Form
     {
+        private string moismodifier;
         public FormMenuMission3()
         {
             InitializeComponent();
@@ -29,23 +30,23 @@ namespace Swiss_Visite
             cmbMois.ValueMember = "id";//permet de stocker l'identifiant
             cmbMois.DisplayMember = "libelle";
 
-            bsComboMois.DataSource = ModelMission3.recherchefichefrais(v2.idVisiteur.ToString());
-            cmbMois.DataSource = bsComboMois;
+           // bsComboMois.DataSource = ModelMission3.recherchefichefrais(v2.idVisiteur.ToString());
+           // cmbMois.DataSource = bsComboMois;
+    
 
 
 
-        //    for (int i = DateTime.Today.Year; i >= 1800; i--)
-        //    {
+           for (int i = DateTime.Today.Year; i >= 1800; i--)
+            {
 
-        //        cmbMois.Items.Add(i);
-        //    }
+               cmbMois.Items.Add(i);
+            }
 
-            bsfichefrais.DataSource = ModelMission3.ToutesLesfichesfrais();
-            dgvfichesfrais.DataSource = bsfichefrais;
-            dgvfichesfrais.Columns[0].HeaderText = "Mois";
-            dgvfichesfrais.Columns[1].HeaderText = "NB justificatifs";
-            dgvfichesfrais.Columns[2].HeaderText = "date de modification";
-            dgvfichesfrais.Columns[3].HeaderText = "l'etat";
+            //bsfichefrais.DataSource = ModelMission3.ToutesLesfichesfrais(v2.idVisiteur.ToString());
+            //dgvfichesfrais.DataSource = bsfichefrais;
+            //dgvfichesfrais.Columns[0].HeaderText = "ID";
+            //dgvfichesfrais.Columns[1].HeaderText = "date de modification";
+            //dgvfichesfrais.Columns[2].HeaderText = "Mois";
 
 
 
@@ -58,11 +59,21 @@ namespace Swiss_Visite
         }
         private void Btncreer_Click(object sender, EventArgs e)
         {
+            string moisanne;
+            if (DateTime.Now.Month < 10)
+            {
+                moisanne = "0" + DateTime.Now.Year.ToString();
+            }
+            else
+            {
+                moisanne =  DateTime.Now.Year.ToString();
+            }
+
             Visiteur v2 = Model.rechercheVisiteur(Model.idclient);
             string matricule = v2.idVisiteur.ToString();
             string date = DateTime.Now.Month + DateTime.Now.Year.ToString();
 
-            ModelMission3.enregfichefrais(matricule, "62021", "CR", "0");
+            ModelMission3.enregfichefrais(matricule, moisanne, "CR", "0");
             
                 
                 System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
@@ -75,6 +86,51 @@ namespace Swiss_Visite
         }
 
         private void dgvfichesfrais_CurrentCellChanged(object sender, EventArgs e)
+        {
+
+        }
+        public void ThreadProcVisiteurModifier()
+        {
+            
+            Application.Run(new VisiteurModifierfraisforfait(this.moismodifier));
+        }
+
+        private void btnModif_Click(object sender, EventArgs e)
+        {
+            if (dgvfichesfrais.SelectedRows.Count > 0)
+            {
+                //permets de passer la valeur du mois choisi dans le forms VisiteurModifierfraisforfait
+                this.moismodifier = dgvfichesfrais.CurrentRow.Cells[2].Value.ToString();
+                MessageBox.Show(this.moismodifier);
+                
+                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProcVisiteurModifier));
+                
+                t.Start();
+                this.Close();
+                
+            }
+            else
+            {
+                MessageBox.Show("Veuillz selectionner un fichefrais pour le modifier !");
+            }
+        }
+
+        private void cmbMois_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // if (closing == false)
+            // {
+
+            
+            Visiteur v2 = Model.rechercheVisiteur(Model.idclient);
+            bsfichefrais.DataSource = ModelMission3.ToutesLesfichesfrais(v2.idVisiteur.ToString());
+            dgvfichesfrais.DataSource = bsfichefrais;
+            dgvfichesfrais.Columns[0].HeaderText = "ID";
+            dgvfichesfrais.Columns[1].HeaderText = "date de modification";
+            dgvfichesfrais.Columns[2].HeaderText = "Mois";
+            // }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

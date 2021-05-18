@@ -10,26 +10,24 @@ using System.Windows.Forms;
 
 namespace Swiss_Visite
 {
-    public partial class FraisHorsForfait : Form
+    public partial class FraisHorsForafaitModifier : Form
     {
-        private string moisanne;
-        public FraisHorsForfait(string moisanneselectionne)
+        public FraisHorsForafaitModifier()
         {
             InitializeComponent();
-            this.moisanne = moisanneselectionne;
         }
 
-        private void Label1_Click(object sender, EventArgs e)
+        private void FraisHorsForafaitModifier_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void BtnAjouter_Click(object sender, EventArgs e)
+        private void btnAjouter_Click(object sender, EventArgs e)
         {
             if (dgvfraisHorsForfait.RowCount > 0)
             {
-       
-                string[] row = new string[] { lblLibelle.Text, nmMontant.Text};
+
+                string[] row = new string[] { lblLibelle.Text, nmMontant.Text };
                 dgvfraisHorsForfait.Rows.Add(row);
 
 
@@ -41,22 +39,19 @@ namespace Swiss_Visite
                 dgvfraisHorsForfait[0, 0].Value = lblLibelle.Text;
             }
         }
- 
 
-        private void BtnAnnuler_Click(object sender, EventArgs e)
+        private void btnAnnuler_Click(object sender, EventArgs e)
         {
-
             this.Close();
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-           // string a = ((FraisForfait)bsModedetransport.Current).montant.ToString();
-           // double b = (double.Parse(txtQuantiteKilometres.Text) * double.Parse(a));
-           // cboModeDeTransport.SelectedItem = dgvfraiskilometriques.SelectedRows[0].Cells[1].Value;
+            // string a = ((FraisForfait)bsModedetransport.Current).montant.ToString();
+            // double b = (double.Parse(txtQuantiteKilometres.Text) * double.Parse(a));
+            // cboModeDeTransport.SelectedItem = dgvfraiskilometriques.SelectedRows[0].Cells[1].Value;
             dgvfraisHorsForfait.SelectedRows[0].Cells[1].Value = nmMontant.Text;
             dgvfraisHorsForfait.SelectedRows[0].Cells[0].Value = lblLibelle.Text;
-           
         }
 
         private void dgvfraisHorsForfait_SelectionChanged(object sender, EventArgs e)
@@ -75,7 +70,7 @@ namespace Swiss_Visite
                 if (MessageBox.Show("voulez vous vraiement suprimer ?", "Confirmer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int rowIndex = dgvfraisHorsForfait.CurrentCell.RowIndex;
-                   dgvfraisHorsForfait.Rows.RemoveAt(rowIndex);
+                    dgvfraisHorsForfait.Rows.RemoveAt(rowIndex);
                 }
                 else
                 {
@@ -98,18 +93,12 @@ namespace Swiss_Visite
             {
                 MessageBox.Show(dgvfraisHorsForfait.Rows[i].Cells[0].Value.ToString());
                 MessageBox.Show(dgvfraisHorsForfait.Rows[i].Cells[1].Value.ToString());
-                MessageBox.Show(moisanne);
-                ModelMission3.enregfraishorsforfait(i.ToString(), matricule, this.moisanne, dgvfraisHorsForfait.Rows[i].Cells[0].Value.ToString(), dgvfraisHorsForfait.Rows[i].Cells[1].Value.ToString());
+                ModelMission3.enregfraishorsforfait(i.ToString(), matricule, "62021", dgvfraisHorsForfait.Rows[i].Cells[0].Value.ToString(), dgvfraisHorsForfait.Rows[i].Cells[1].Value.ToString());
 
 
             }
 
             this.Close();
-        }
-
-        private void FraisHorsForfait_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

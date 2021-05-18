@@ -3,48 +3,26 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+
 
 namespace Swiss_Visite
 {
-    public partial class Form2 : Form
+    public partial class VisiteurModifierfraisforfait : Form
     {
-        private string moisanne;
-        public Form2()
+        private string mois;
+        public VisiteurModifierfraisforfait(string mois)
         {
             InitializeComponent();
-
-
+            this.mois = mois;
         }
 
-        private void TblVisiteur_Paint(object sender, PaintEventArgs e)
+        private void VisiteurModifierfraisforfait_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void BindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-
             Visiteur v2 = Model.rechercheVisiteur(Model.idclient);
             bsMatricule.DataSource = v2.idVisiteur.ToString();
             txtMatricule.Text = bsMatricule.DataSource.ToString();
@@ -60,15 +38,23 @@ namespace Swiss_Visite
             // cbmois.Value = DateTime.Today;
             CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("fr-FR");
 
+           
+            int moisint = 2;
+            if(int.Parse(mois.Substring(0, 2)) < 10)
+            {
+                moisint = int.Parse(mois.Substring(1, 1));
+            }
+            else
+            {
+                moisint = int.Parse(mois.Substring(0, 2));
+            }
+            MessageBox.Show(moisint.ToString());
             cbmois.DataSource = CultureInfo.DefaultThreadCurrentCulture.DateTimeFormat
                                                      .MonthNames.Take(12).ToList();
             cbmois.SelectedItem = CultureInfo.DefaultThreadCurrentCulture.DateTimeFormat
-                                                    .MonthNames[DateTime.Now.AddMonths(-1).Month - 1];
-        
+                                                     .MonthNames[moisint-1];
 
 
-            MessageBox.Show(this.moisanne);
-         
             //frais une Nuite
             bsNuit.DataSource = ModelMission3.rechercheFraisForfait("NUI");
 
@@ -91,95 +77,112 @@ namespace Swiss_Visite
             bsModedetransport.DataSource = ModelMission3.recherchefraiskilometrique();
             cboModeDeTransport.DataSource = bsModedetransport;
 
-        
 
-            bsdgvtransport.DataSource = ModelMission3.ajouterfichefrais(Model.idclient,DateTime.Now.Month.ToString());
-            if(bsdgvtransport == null)  
+            bsdgvtransport.DataSource = ModelMission3.ajouterfichefrais(Model.idclient, DateTime.Now.Month.ToString());
+            if (bsdgvtransport == null)
             {
-
-
-
                 int moissansanne = DateTime.ParseExact(cbmois.SelectedItem.ToString(), "MMMM", CultureInfo.CurrentCulture).Month;
 
                 if (moissansanne < 10)
                 {
-                    this.moisanne = "0" + moissansanne.ToString() + DateTime.Now.Year.ToString();
+                    this.mois = "0" + moissansanne.ToString() + DateTime.Now.Year.ToString();
                 }
                 else
                 {
-                    this.moisanne = moissansanne.ToString() + DateTime.Now.Year.ToString();
+                    this.mois = moissansanne.ToString() + DateTime.Now.Year.ToString();
                 }
-
 
                 fichefrais visiteurchoisi = new fichefrais();
                 visiteurchoisi.idVisiteur = Model.idclient.ToString();
-                visiteurchoisi.mois = this.moisanne;
+                visiteurchoisi.mois = this.mois;
                 visiteurchoisi.nbJustificatifs = 0;
                 visiteurchoisi.montantValide = 0;
                 visiteurchoisi.dateModif = DateTime.Now;
                 visiteurchoisi.idEtat = "0";
 
 
-               
-              
+
+
 
             }
 
             txtTotalMidi.Text = (double.Parse(numMidi.Value.ToString()) * double.Parse(txtMontantMidi.Text)).ToString();
 
+
+            if (ModelMission3.LignefraisForfaitNUI(v2.idVisiteur.ToString(), mois) != null)
+            {
+                bsNuiNum.DataSource = ModelMission3.LignefraisForfaitNUI(v2.idVisiteur.ToString(), mois);
+                numForfaitnuite.Value = int.Parse(((LigneFraisForfait)bsNuiNum[0]).quantite.ToString());
+            }
+
+            if (ModelMission3.LignefraisForfaitNUI(v2.idVisiteur.ToString(), mois) != null)
+            {
+                bsRemNum.DataSource = ModelMission3.LignefraisForfaitREM(v2.idVisiteur.ToString(), mois);
+                numMidi.Value = int.Parse(((LigneFraisForfait)bsRemNum[0]).quantite.ToString());
+            }
+
+
+            if (ModelMission3.LignefraisForfaitNUI(v2.idVisiteur.ToString(), mois) != null)
+            {
+                bsResNum.DataSource = ModelMission3.LignefraisForfaitRES(v2.idVisiteur.ToString(), mois);
+                numSoir.Value = int.Parse(((LigneFraisForfait)bsResNum[0]).quantite.ToString());
+            }
+
+            if (ModelMission3.LignefraisForfaitNUI(v2.idVisiteur.ToString(), mois) != null)
+            {
+
+                bsEtpNum.DataSource = ModelMission3.LignefraisForfaitETP(v2.idVisiteur.ToString(), mois);
+                numNuite.Value = int.Parse(((LigneFraisForfait)bsEtpNum[0]).quantite.ToString());
+            }
+
+            if(ModelMission3.LignefraisForfaitkilometrique(v2.idVisiteur.ToString(), mois) != null)
+            {
+                bsdgvtransport.DataSource = ModelMission3.LignefraisForfaitkilometrique(v2.idVisiteur.ToString(), mois);
+                foreach (LigneFraisForfait l in bsdgvtransport)
+                {
+                    
+
+
+                    if (dgvfraiskilometriques.RowCount > 0)
+                    {
+                        string a = ((LigneFraisForfait)bsdgvtransport[0]).quantite.ToString();
+                        double b = (double.Parse(((LigneFraisForfait)bsdgvtransport[0]).FraisForfait.montant.ToString()) * double.Parse(a));
+                        string[] row = new string[] { ((LigneFraisForfait)bsdgvtransport[0]).quantite.ToString(), ((LigneFraisForfait)bsdgvtransport[0]).idFraisForfait.ToString(), b.ToString() };
+                        dgvfraiskilometriques.Rows.Add(row);
+
+
+
+                        // dgvfraiskilometriques[1, dgvfraiskilometriques.RowCount+1].Value = cboModeDeTransport.SelectedValue;
+                    }
+                    else
+                    {
+                        dgvfraiskilometriques[1, 0].Value = cboModeDeTransport.SelectedItem;
+                    }
+                }
+            }
+
         }
 
-        private void DgvForfait_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnAjoutertrans_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void TxtQNuit_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TblVisiteur_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void LblKilometrage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void CboModeDeTransport_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnAjoutertrans_Click(object sender, EventArgs e)
-        {
-            if (dgvfraiskilometriques.RowCount  > 0 )
+            if (dgvfraiskilometriques.RowCount > 0)
             {
                 string a = ((FraisForfait)bsModedetransport.Current).montant.ToString();
                 double b = (double.Parse(txtQuantiteKilometres.Text) * double.Parse(a));
                 string[] row = new string[] { txtQuantiteKilometres.Text, cboModeDeTransport.Text, b.ToString() };
                 dgvfraiskilometriques.Rows.Add(row);
-                
 
 
-               // dgvfraiskilometriques[1, dgvfraiskilometriques.RowCount+1].Value = cboModeDeTransport.SelectedValue;
+
+                // dgvfraiskilometriques[1, dgvfraiskilometriques.RowCount+1].Value = cboModeDeTransport.SelectedValue;
             }
             else
             {
                 dgvfraiskilometriques[1, 0].Value = cboModeDeTransport.SelectedItem;
             }
-           
         }
 
-        private void BtnModifier_Click(object sender, EventArgs e)
+        private void btnModifier_Click(object sender, EventArgs e)
         {
             string a = ((FraisForfait)bsModedetransport.Current).montant.ToString();
             double b = (double.Parse(txtQuantiteKilometres.Text) * double.Parse(a));
@@ -189,7 +192,7 @@ namespace Swiss_Visite
             dgvfraiskilometriques.SelectedRows[0].Cells[2].Value = b.ToString();
         }
 
-        private void Dgvfraiskilometriques_SelectionChanged(object sender, EventArgs e)
+        private void dgvfraiskilometriques_SelectionChanged(object sender, EventArgs e)
         {
             //  MessageBox.Show(dgvfraiskilometriques.SelectedRows[0].Cells[1].Value.ToString());
             if (dgvfraiskilometriques.SelectedRows[0].Cells[1].Value != null)
@@ -199,7 +202,7 @@ namespace Swiss_Visite
             }
         }
 
-        private void BtnSupprimer_Click(object sender, EventArgs e)
+        private void btnSupprimer_Click(object sender, EventArgs e)
         {
             if (dgvfraiskilometriques.CurrentRow.Selected == true && dgvfraiskilometriques.Rows.Count > 1 && dgvfraiskilometriques.Rows != null)
             {
@@ -217,114 +220,98 @@ namespace Swiss_Visite
             {
                 MessageBox.Show("Selectionner la ligne que vous voulez supprimer");
             }
-
-
         }
 
-        private void NumMidi_ValueChanged(object sender, EventArgs e)
-        {
-            txtTotalMidi.Text = (double.Parse(numMidi.Value.ToString()) * double.Parse(txtMontantMidi.Text)).ToString();
-        }
-
-        private void NumNuite_ValueChanged(object sender, EventArgs e)
+        private void numNuite_ValueChanged(object sender, EventArgs e)
         {
             txtTotalNuit.Text = (double.Parse(numNuite.Value.ToString()) * double.Parse(txtMontantNuit.Text)).ToString();
+
         }
 
-        private void NumSoir_ValueChanged(object sender, EventArgs e)
+        private void numMidi_ValueChanged(object sender, EventArgs e)
+        {
+            txtTotalMidi.Text = (double.Parse(numMidi.Value.ToString()) * double.Parse(txtMontantMidi.Text)).ToString();
+
+        }
+
+        private void numSoir_ValueChanged(object sender, EventArgs e)
         {
             txtTotalRepasSoir.Text = (double.Parse(numSoir.Value.ToString()) * double.Parse(txtMontantSoir.Text)).ToString();
+
         }
 
-        private void NumForfaitnuite_ValueChanged(object sender, EventArgs e)
+        private void numForfaitnuite_ValueChanged(object sender, EventArgs e)
         {
             txttotalForfaitnuite.Text = (double.Parse(numForfaitnuite.Value.ToString()) * double.Parse(txtMontantForfaitnuite.Text)).ToString();
+
         }
+
         public static void ThreadProc()
         {
             Application.Run(new FormMenuMission3());
         }
 
-        private void BtnAnnulerfraistransport_Click(object sender, EventArgs e)
+        private void btnAnnulerfraistransport_Click(object sender, EventArgs e)
         {
             System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
 
             t.Start();
             this.Close();
-
         }
 
-        private void BtnValiderfichefrais_Click(object sender, EventArgs e)
+        private void btnValiderfichefrais_Click(object sender, EventArgs e)
         {
-
             int moissansanne = DateTime.ParseExact(cbmois.SelectedItem.ToString(), "MMMM", CultureInfo.CurrentCulture).Month;
 
             if (moissansanne < 10)
             {
-                this.moisanne = "0" + moissansanne.ToString() + DateTime.Now.Year.ToString();
+                this.mois = "0" + moissansanne.ToString() + DateTime.Now.Year.ToString();
             }
             else
             {
-                this.moisanne = moissansanne.ToString() + DateTime.Now.Year.ToString();
+                this.mois = moissansanne.ToString() + DateTime.Now.Year.ToString();
             }
-            MessageBox.Show(this.moisanne.ToString());
 
-
-
-            ModelMission3.enregfichefrais(txtMatricule.Text, this.moisanne, "CR", "0");
             string date = DateTime.Now.Month + DateTime.Now.Year.ToString();
-                ModelMission3.enregnuite(txtMatricule.Text, this.moisanne, "NUI", numNuite.Value.ToString());
-                ModelMission3.enregmidi(txtMatricule.Text, this.moisanne, "REM", numMidi.Value.ToString());
-                ModelMission3.enregsoir(txtMatricule.Text, this.moisanne, "RES", numSoir.Value.ToString());
-                ModelMission3.enregforfnuite(txtMatricule.Text, this.moisanne, "ETP", numForfaitnuite.Value.ToString());
-                for (int i = 0; i < dgvfraiskilometriques.Rows.Count - 1; i++)
-                {
-                    MessageBox.Show(dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
-                    MessageBox.Show(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString());
-                    ModelMission3.enregfraiskm(txtMatricule.Text, this.moisanne, ((FraisForfait)ModelMission3.idlignefrais(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString())).id , dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
+            ModelMission3.enregnuite(txtMatricule.Text, this.mois, "NUI", numNuite.Value.ToString());
+            ModelMission3.enregmidi(txtMatricule.Text, this.mois, "REM", numMidi.Value.ToString());
+            ModelMission3.enregsoir(txtMatricule.Text, this.mois, "RES", numSoir.Value.ToString());
+            ModelMission3.enregforfnuite(txtMatricule.Text, this.mois, "ETP", numForfaitnuite.Value.ToString());
+            for (int i = 0; i < dgvfraiskilometriques.Rows.Count - 1; i++)
+            {
+                MessageBox.Show(dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
+                MessageBox.Show(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString());
+                ModelMission3.enregfraiskm(txtMatricule.Text, this.mois, ((FraisForfait)ModelMission3.idlignefrais(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString())).id, dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
 
-                }
-                MessageBox.Show("Enregistrement effectue");
+            }
+            MessageBox.Show("Enregistrement effectue");
 
             System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
 
             t.Start();
             this.Close();
 
-
         }
 
-        private void BindingNavigator1_RefreshItems(object sender, EventArgs e)
+        public static void ThreadProchorsforfait()
         {
-
+            Application.Run(new FraisHorsForafaitModifier());
         }
 
-        public static void ThreadProchorsforfait(string moisanne)
+        private void btnfraishorsforfait_Click(object sender, EventArgs e)
         {
-            Application.Run(new FraisHorsForfait(moisanne));
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProchorsforfait));
+
+            t.Start();
         }
 
-        private void Btnfraishorsforfait_Click(object sender, EventArgs e)
+        private void lemoisamodifier(string mois)
         {
-            // System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProchorsforfait()));
-
-            // t.Start(this.moisanne);
-            int moissansanne = DateTime.ParseExact(cbmois.SelectedItem.ToString(), "MMMM", CultureInfo.CurrentCulture).Month;
-
-            if (moissansanne < 10)
-            {
-                this.moisanne = "0" + moissansanne.ToString() + DateTime.Now.Year.ToString();
-            }
-            else
-            {
-                this.moisanne = moissansanne.ToString() + DateTime.Now.Year.ToString();
-            }
-            MessageBox.Show(this.moisanne);
-            ModelMission3.enregfichefrais(txtMatricule.Text, this.moisanne, "CR", "0");
-            FraisHorsForfait form = new FraisHorsForfait(this.moisanne);
-            
-            form.Show();
+            this.mois = mois;
         }
+
+        
+
+
     }
 }
- 
