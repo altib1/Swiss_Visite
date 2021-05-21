@@ -9,7 +9,7 @@ namespace Swiss_Visite
     public static class ModelMission3
     {
        
-        public static BALNHome maConnexion;
+        public static GSBbdd maConnexion;
      
 
        
@@ -17,7 +17,7 @@ namespace Swiss_Visite
         public static void init()
         {
             /* Instantiation d’un objet de la classe typée chaine de connexion SqlConnection */
-            maConnexion = new BALNHome();
+            maConnexion = new GSBbdd();
             
         }
 

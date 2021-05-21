@@ -12,7 +12,7 @@ namespace Swiss_Visite
     {
         private static Visiteur utilisateurConnecte;
         private static bool connexionValide;
-        public static BALNHome maConnexion;
+        public static GSBbdd maConnexion;
         public static string idclient;
 
         public static Visiteur UtilisateurConnecte { get => utilisateurConnecte; set => utilisateurConnecte = value; }
@@ -21,7 +21,7 @@ namespace Swiss_Visite
         public static void init()
         {
             /* Instantiation d’un objet de la classe typée chaine de connexion SqlConnection */
-            maConnexion = new BALNHome();
+            maConnexion = new GSBbdd();
             ConnexionValide = false;
         }
         private static string GetMd5Hash(string PasswdSaisi)
