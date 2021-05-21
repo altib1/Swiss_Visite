@@ -1,0 +1,78 @@
+﻿'Swiss_Visite.exe' (CLR v4.0.30319: DefaultDomain) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_32\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: DefaultDomain) : Chargé 'C:\Users\altib\source\repos\altib1\Swiss_Visite\Swiss_Visite\bin\Debug\Swiss_Visite.exe'. Les symboles ont été chargés.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Users\altib\source\repos\altib1\Swiss_Visite\Swiss_Visite\bin\Debug\EntityFramework.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_32\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Users\altib\source\repos\altib1\Swiss_Visite\Swiss_Visite\bin\Debug\EntityFramework.SqlServer.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'Anonymously Hosted DynamicMethods Assembly'. 
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Numerics\v4.0_4.0.0.0__b77a5c561934e089\System.Numerics.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_32\System.Data.OracleClient\v4.0_4.0.0.0__b77a5c561934e089\System.Data.OracleClient.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Data.resources\v4.0_4.0.0.0_fr_b77a5c561934e089\System.Data.resources.dll'. Le module a été généré sans symboles.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_32\System.Transactions\v4.0_4.0.0.0__b77a5c561934e089\System.Transactions.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xml.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.Linq.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xml.resources\v4.0_4.0.0.0_fr_b77a5c561934e089\System.Xml.resources.dll'. Le module a été généré sans symboles.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_32\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_32\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.Wrapper.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Users\altib\source\repos\altib1\Swiss_Visite\Swiss_Visite\bin\Debug\fr\EntityFramework.resources.dll'. Le module a été généré sans symboles.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'EntityFrameworkDynamicProxies-Swiss_Visite'. 
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Serialization\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Serialization.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Caching\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Runtime.Caching.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms.resources\v4.0_4.0.0.0_fr_b77a5c561934e089\System.Windows.Forms.resources.dll'. Le module a été généré sans symboles.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\mscorlib.resources\v4.0_4.0.0.0_fr_b77a5c561934e089\mscorlib.resources.dll'. Le module a été généré sans symboles.
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.ComponentModel.DataAnnotations\v4.0_4.0.0.0__31bf3856ad364e35\System.ComponentModel.DataAnnotations.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+Le thread 0x3054 s'est arrêté avec le code 0 (0x0).
+Exception levée : 'System.Data.Entity.Infrastructure.DbUpdateException' dans EntityFramework.dll
+Exception levée : 'System.Data.Entity.Infrastructure.DbUpdateException' dans EntityFramework.dll
+Exception levée : 'System.Data.Entity.Infrastructure.DbUpdateException' dans EntityFramework.dll
+Exception levée : 'System.Data.Entity.Infrastructure.DbUpdateException' dans EntityFramework.dll
+Le thread 0x31c s'est arrêté avec le code 0 (0x0).
+Exception levée : 'System.Data.Entity.Infrastructure.DbUpdateException' dans EntityFramework.dll
+Le thread 0x3b34 s'est arrêté avec le code 0 (0x0).
+Exception levée : 'System.Data.Entity.Infrastructure.DbUpdateException' dans EntityFramework.dll
+Exception levée : 'System.Data.Entity.Infrastructure.DbUpdateException' dans EntityFramework.dll
+Exception levée : 'System.Data.Entity.Infrastructure.DbUpdateException' dans EntityFramework.dll
+Exception levée : 'System.Data.Entity.Infrastructure.DbUpdateException' dans EntityFramework.dll
+Le thread 0x30b8 s'est arrêté avec le code 0 (0x0).
+Le thread 0x3960 s'est arrêté avec le code 0 (0x0).
+Exception levée : 'System.FormatException' dans mscorlib.dll
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Transactions.resources\v4.0_4.0.0.0_fr_b77a5c561934e089\System.Transactions.resources.dll'. Le module a été généré sans symboles.
+System.Transactions Critical: 0 : <TraceRecord xmlns="http://schemas.microsoft.com/2004/10/E2ETraceEvent/TraceRecord" Severity="Critical"><TraceIdentifier>http://msdn.microsoft.com/TraceCodes/System/ActivityTracing/2004/07/Reliability/Exception/Unhandled</TraceIdentifier><Description>Exception non prise en charge</Description><AppDomain>Swiss_Visite.exe</AppDomain><Exception><ExceptionType>System.FormatException, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ExceptionType><Message>La chaîne n'a pas été reconnue en tant que DateTime valide.</Message><StackTrace>   à System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   à System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   à Swiss_Visite.VisiteurModifierfraisforfait.VisiteurModifierfraisforfait_Load(Object sender, EventArgs e) dans C:\Users\altib\source\repos\altib1\Swiss_Visite\Swiss_Visite\VisiteurModifierfraisforfait.cs:ligne 41
+   à System.Windows.Forms.Form.OnLoad(EventArgs e)
+   à System.Windows.Forms.Form.OnCreateControl()
+   à System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)
+   à System.Windows.Forms.Control.CreateControl()
+   à System.Windows.Forms.Control.WmShowWindow(Message&amp;amp; m)
+   à System.Windows.Forms.Control.WndProc(Message&amp;amp; m)
+   à System.Windows.Forms.ScrollableControl.WndProc(Message&amp;amp; m)
+   à System.Windows.Forms.Form.WmShowWindow(Message&amp;amp; m)
+   à System.Windows.Forms.Form.WndProc(Message&amp;amp; m)
+   à System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message&amp;amp; m)
+   à System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message&amp;amp; m)
+   à System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)</StackTrace><ExceptionString>System.FormatException: La chaîne n'a pas été reconnue en tant que DateTime valide.
+   à System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   à System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   à Swiss_Visite.VisiteurModifierfraisforfait.VisiteurModifierfraisforfait_Load(Object sender, EventArgs e) dans C:\Users\altib\source\repos\altib1\Swiss_Visite\Swiss_Visite\VisiteurModifierfraisforfait.cs:ligne 41
+   à System.Windows.Forms.Form.OnLoad(EventArgs e)
+   à System.Windows.Forms.Form.OnCreateControl()
+   à System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)
+   à System.Windows.Forms.Control.CreateControl()
+   à System.Windows.Forms.Control.WmShowWindow(Message&amp;amp; m)
+   à System.Windows.Forms.Control.WndProc(Message&amp;amp; m)
+   à System.Windows.Forms.ScrollableControl.WndProc(Message&amp;amp; m)
+   à System.Windows.Forms.Form.WmShowWindow(Message&amp;amp; m)
+   à System.Windows.Forms.Form.WndProc(Message&amp;amp; m)
+   à System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message&amp;amp; m)
+   à System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message&amp;amp; m)
+   à System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)</ExceptionString></Exception></TraceRecord>
+Une exception non gérée du type 'System.FormatException' s'est produite dans mscorlib.dll
+La chaîne n'a pas été reconnue en tant que DateTime valide.
+
+'Swiss_Visite.exe' (CLR v4.0.30319: Swiss_Visite.exe) : Chargé 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\PrivateAssemblies\Runtime\Microsoft.VisualStudio.Debugger.Runtime.Desktop.dll'. Chargement des symboles ignoré. Le module est optimisé et l'option du débogueur 'Uniquement mon code' est activée.
+Le programme '[11664] Swiss_Visite.exe' s'est arrêté avec le code -1 (0xffffffff).
