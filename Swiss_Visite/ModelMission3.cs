@@ -303,17 +303,17 @@ namespace Swiss_Visite
 
         // tout les fiches frais 
 
-        public static Object ToutesLesfichesfrais(string id)
+        public static fichefrais ToutesLesfichesfrais(string id, string mois)
         {
             var LQuery = maConnexion.fichefrais.ToList()
 
-                           .Where(x => x.idVisiteur == id)
-                           .Select(x => new { x.idVisiteur, x.dateModif, x.mois });
+                           .Where(x => x.idVisiteur == id && x.mois.EndsWith(mois));
+                           
 
 
             if (LQuery.ToList().Count > 0)
             {
-                return LQuery.ToList();
+                return LQuery.ToList()[0];
             }
             else
             {
@@ -430,6 +430,152 @@ namespace Swiss_Visite
         }
 
 
+        //Alter requettes pour modifier les informations
+
+
+
+        public static void alterenregnuite(string idvisiteurs, string mois, string idfraisforfait, string quantite)
+        {
+
+          /*  LigneFraisForfait nuite = new LigneFraisForfait();
+
+            nuite.idVisiteur = idvisiteurs;
+            nuite.mois = mois;
+            nuite.quantite = int.Parse(quantite);
+            nuite.idFraisForfait = idfraisforfait;  */
+
+
+           
+
+                LigneFraisForfait nuite = maConnexion.LigneFraisForfait.Where(x => x.idVisiteur == idvisiteurs && x.mois == mois).FirstOrDefault();
+                if (nuite == null) throw new Exception("");
+
+                nuite.idVisiteur = idvisiteurs;
+                nuite.mois = mois;
+                nuite.quantite = int.Parse(quantite);
+                nuite.idFraisForfait = idfraisforfait;
+                try
+                {
+                    maConnexion.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    maConnexion.Dispose();
+                    init();
+                }
+
+            
+
+        }
+        public static void alterenregsoir(string idvisiteurs, string mois, string idfraisforfait, string quantite)
+        {
+            LigneFraisForfait soir = new LigneFraisForfait();
+
+            soir.idVisiteur = idvisiteurs;
+            soir.mois = mois;
+            soir.quantite = int.Parse(quantite);
+            soir.idFraisForfait = idfraisforfait;
+            maConnexion.LigneFraisForfait.Add(soir);
+            try
+            {
+                maConnexion.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                maConnexion.Dispose();
+                init();
+            }
+
+        }
+
+        public static void alterenregmidi(string idvisiteurs, string mois, string idfraisforfait, string quantite)
+        {
+            LigneFraisForfait midi = new LigneFraisForfait();
+
+            midi.idVisiteur = idvisiteurs;
+            midi.mois = mois;
+            midi.quantite = int.Parse(quantite);
+            midi.idFraisForfait = idfraisforfait;
+            maConnexion.LigneFraisForfait.Add(midi);
+
+
+            try
+            {
+                maConnexion.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                maConnexion.Dispose();
+                init();
+            }
+
+        }
+
+        public static void alterenregforfnuite(string idvisiteurs, string mois, string idfraisforfait, string quantite)
+        {
+            LigneFraisForfait forfnuite = new LigneFraisForfait();
+
+            forfnuite.idVisiteur = idvisiteurs;
+            forfnuite.mois = mois;
+            forfnuite.quantite = int.Parse(quantite);
+            forfnuite.idFraisForfait = idfraisforfait;
+            maConnexion.LigneFraisForfait.Add(forfnuite);
+            try
+            {
+                maConnexion.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                maConnexion.Dispose();
+                init();
+            }
+
+        }
+
+        public static void alterenregfraiskm(string idvisiteurs, string mois, string idfraisforfait, string quantite)
+        {
+            LigneFraisForfait fraiskm = new LigneFraisForfait();
+
+            fraiskm.idVisiteur = idvisiteurs;
+            fraiskm.mois = mois;
+            fraiskm.quantite = int.Parse(quantite);
+            fraiskm.idFraisForfait = idfraisforfait;
+            maConnexion.LigneFraisForfait.Add(fraiskm);
+            try
+            {
+                maConnexion.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                maConnexion.Dispose();
+                init();
+            }
+
+        }
+        // enregistrement des frais hors forfait
+        public static void alterenregfraishorsforfait(string iteration, string idvisiteurs, string mois, string libelle, string montant)
+        {
+            LigneFraisHorsForfait fraiskm = new LigneFraisHorsForfait();
+
+            fraiskm.idVisiteur = idvisiteurs;
+            fraiskm.mois = mois;
+            fraiskm.date = DateTime.Now;
+            fraiskm.montant = int.Parse(montant);
+            fraiskm.libelle = libelle;
+            fraiskm.id = int.Parse(iteration);
+            maConnexion.LigneFraisHorsForfait.Add(fraiskm);
+            try
+            {
+                maConnexion.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                maConnexion.Dispose();
+                init();
+            }
+
+
+        }
 
     }
 }

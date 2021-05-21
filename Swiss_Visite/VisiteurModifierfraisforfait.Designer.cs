@@ -303,7 +303,7 @@ namespace Swiss_Visite
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.1282F));
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.8718F));
             this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 298F));
-            this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 214F));
+            this.tblVisiteur.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 218F));
             this.tblVisiteur.Controls.Add(this.label3, 0, 4);
             this.tblVisiteur.Controls.Add(this.numSoir, 1, 3);
             this.tblVisiteur.Controls.Add(this.numMidi, 1, 2);
@@ -348,25 +348,25 @@ namespace Swiss_Visite
             // 
             // numSoir
             // 
-            this.numSoir.Location = new System.Drawing.Point(90, 100);
+            this.numSoir.Location = new System.Drawing.Point(88, 100);
             this.numSoir.Name = "numSoir";
             this.numSoir.ReadOnly = true;
-            this.numSoir.Size = new System.Drawing.Size(35, 20);
+            this.numSoir.Size = new System.Drawing.Size(33, 20);
             this.numSoir.TabIndex = 30;
             this.numSoir.ValueChanged += new System.EventHandler(this.numSoir_ValueChanged);
             // 
             // numMidi
             // 
-            this.numMidi.Location = new System.Drawing.Point(90, 68);
+            this.numMidi.Location = new System.Drawing.Point(88, 68);
             this.numMidi.Name = "numMidi";
             this.numMidi.ReadOnly = true;
-            this.numMidi.Size = new System.Drawing.Size(35, 20);
+            this.numMidi.Size = new System.Drawing.Size(33, 20);
             this.numMidi.TabIndex = 29;
             this.numMidi.ValueChanged += new System.EventHandler(this.numMidi_ValueChanged);
             // 
             // txtTotalRepasSoir
             // 
-            this.txtTotalRepasSoir.Location = new System.Drawing.Point(435, 100);
+            this.txtTotalRepasSoir.Location = new System.Drawing.Point(431, 100);
             this.txtTotalRepasSoir.Name = "txtTotalRepasSoir";
             this.txtTotalRepasSoir.ReadOnly = true;
             this.txtTotalRepasSoir.Size = new System.Drawing.Size(101, 20);
@@ -374,7 +374,7 @@ namespace Swiss_Visite
             // 
             // txtMontantSoir
             // 
-            this.txtMontantSoir.Location = new System.Drawing.Point(134, 100);
+            this.txtMontantSoir.Location = new System.Drawing.Point(130, 100);
             this.txtMontantSoir.Name = "txtMontantSoir";
             this.txtMontantSoir.ReadOnly = true;
             this.txtMontantSoir.Size = new System.Drawing.Size(291, 20);
@@ -382,7 +382,7 @@ namespace Swiss_Visite
             // 
             // txtTotalMidi
             // 
-            this.txtTotalMidi.Location = new System.Drawing.Point(435, 68);
+            this.txtTotalMidi.Location = new System.Drawing.Point(431, 68);
             this.txtTotalMidi.Name = "txtTotalMidi";
             this.txtTotalMidi.ReadOnly = true;
             this.txtTotalMidi.Size = new System.Drawing.Size(101, 20);
@@ -390,7 +390,7 @@ namespace Swiss_Visite
             // 
             // txtMontantMidi
             // 
-            this.txtMontantMidi.Location = new System.Drawing.Point(134, 68);
+            this.txtMontantMidi.Location = new System.Drawing.Point(130, 68);
             this.txtMontantMidi.Name = "txtMontantMidi";
             this.txtMontantMidi.ReadOnly = true;
             this.txtMontantMidi.Size = new System.Drawing.Size(291, 20);
@@ -398,7 +398,7 @@ namespace Swiss_Visite
             // 
             // txtTotalNuit
             // 
-            this.txtTotalNuit.Location = new System.Drawing.Point(435, 44);
+            this.txtTotalNuit.Location = new System.Drawing.Point(431, 44);
             this.txtTotalNuit.Name = "txtTotalNuit";
             this.txtTotalNuit.ReadOnly = true;
             this.txtTotalNuit.Size = new System.Drawing.Size(101, 20);
@@ -419,7 +419,7 @@ namespace Swiss_Visite
             this.lblQuantite.AutoSize = true;
             this.lblQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantite.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblQuantite.Location = new System.Drawing.Point(90, 8);
+            this.lblQuantite.Location = new System.Drawing.Point(88, 8);
             this.lblQuantite.Name = "lblQuantite";
             this.lblQuantite.Size = new System.Drawing.Size(33, 30);
             this.lblQuantite.TabIndex = 11;
@@ -441,7 +441,7 @@ namespace Swiss_Visite
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblTotal.Location = new System.Drawing.Point(435, 8);
+            this.lblTotal.Location = new System.Drawing.Point(431, 8);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(44, 16);
             this.lblTotal.TabIndex = 13;
@@ -469,7 +469,7 @@ namespace Swiss_Visite
             // 
             // txtMontantNuit
             // 
-            this.txtMontantNuit.Location = new System.Drawing.Point(134, 44);
+            this.txtMontantNuit.Location = new System.Drawing.Point(130, 44);
             this.txtMontantNuit.Name = "txtMontantNuit";
             this.txtMontantNuit.ReadOnly = true;
             this.txtMontantNuit.Size = new System.Drawing.Size(291, 20);
@@ -483,7 +483,7 @@ namespace Swiss_Visite
             this.lblMontatnt.AutoSize = true;
             this.lblMontatnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontatnt.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblMontatnt.Location = new System.Drawing.Point(134, 8);
+            this.lblMontatnt.Location = new System.Drawing.Point(130, 8);
             this.lblMontatnt.Name = "lblMontatnt";
             this.lblMontatnt.Size = new System.Drawing.Size(292, 30);
             this.lblMontatnt.TabIndex = 12;
@@ -492,7 +492,7 @@ namespace Swiss_Visite
             // 
             // txtMontantForfaitnuite
             // 
-            this.txtMontantForfaitnuite.Location = new System.Drawing.Point(134, 130);
+            this.txtMontantForfaitnuite.Location = new System.Drawing.Point(130, 130);
             this.txtMontantForfaitnuite.Name = "txtMontantForfaitnuite";
             this.txtMontantForfaitnuite.ReadOnly = true;
             this.txtMontantForfaitnuite.Size = new System.Drawing.Size(292, 20);
@@ -500,7 +500,7 @@ namespace Swiss_Visite
             // 
             // txttotalForfaitnuite
             // 
-            this.txttotalForfaitnuite.Location = new System.Drawing.Point(435, 130);
+            this.txttotalForfaitnuite.Location = new System.Drawing.Point(431, 130);
             this.txttotalForfaitnuite.Name = "txttotalForfaitnuite";
             this.txttotalForfaitnuite.ReadOnly = true;
             this.txttotalForfaitnuite.Size = new System.Drawing.Size(101, 20);
@@ -508,19 +508,19 @@ namespace Swiss_Visite
             // 
             // numNuite
             // 
-            this.numNuite.Location = new System.Drawing.Point(90, 44);
+            this.numNuite.Location = new System.Drawing.Point(88, 44);
             this.numNuite.Name = "numNuite";
             this.numNuite.ReadOnly = true;
-            this.numNuite.Size = new System.Drawing.Size(35, 20);
+            this.numNuite.Size = new System.Drawing.Size(33, 20);
             this.numNuite.TabIndex = 28;
             this.numNuite.ValueChanged += new System.EventHandler(this.numNuite_ValueChanged);
             // 
             // numForfaitnuite
             // 
-            this.numForfaitnuite.Location = new System.Drawing.Point(90, 130);
+            this.numForfaitnuite.Location = new System.Drawing.Point(88, 130);
             this.numForfaitnuite.Name = "numForfaitnuite";
             this.numForfaitnuite.ReadOnly = true;
-            this.numForfaitnuite.Size = new System.Drawing.Size(35, 20);
+            this.numForfaitnuite.Size = new System.Drawing.Size(33, 20);
             this.numForfaitnuite.TabIndex = 31;
             this.numForfaitnuite.ValueChanged += new System.EventHandler(this.numForfaitnuite_ValueChanged);
             // 

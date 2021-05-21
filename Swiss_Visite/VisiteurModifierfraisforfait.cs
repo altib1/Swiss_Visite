@@ -145,9 +145,9 @@ namespace Swiss_Visite
 
                     if (dgvfraiskilometriques.RowCount > 0)
                     {
-                        string a = ((LigneFraisForfait)bsdgvtransport[0]).quantite.ToString();
-                        double b = (double.Parse(((LigneFraisForfait)bsdgvtransport[0]).FraisForfait.montant.ToString()) * double.Parse(a));
-                        string[] row = new string[] { ((LigneFraisForfait)bsdgvtransport[0]).quantite.ToString(), ((LigneFraisForfait)bsdgvtransport[0]).idFraisForfait.ToString(), b.ToString() };
+                        string a = l.quantite.ToString();
+                        double b = (double.Parse(l.FraisForfait.montant.ToString()) * double.Parse(a));
+                        string[] row = new string[] { l.quantite.ToString(), l.idFraisForfait.ToString(), b.ToString() };
                         dgvfraiskilometriques.Rows.Add(row);
 
 
@@ -273,7 +273,7 @@ namespace Swiss_Visite
             }
 
             string date = DateTime.Now.Month + DateTime.Now.Year.ToString();
-            ModelMission3.enregnuite(txtMatricule.Text, this.mois, "NUI", numNuite.Value.ToString());
+            ModelMission3.alterenregnuite(txtMatricule.Text, this.mois, "NUI", numNuite.Value.ToString());
             ModelMission3.enregmidi(txtMatricule.Text, this.mois, "REM", numMidi.Value.ToString());
             ModelMission3.enregsoir(txtMatricule.Text, this.mois, "RES", numSoir.Value.ToString());
             ModelMission3.enregforfnuite(txtMatricule.Text, this.mois, "ETP", numForfaitnuite.Value.ToString());

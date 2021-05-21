@@ -41,8 +41,8 @@
             this.lblNom = new System.Windows.Forms.Label();
             this.bsfichefrais = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.bsNom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvfichesfrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsComboMois)).BeginInit();
@@ -106,9 +106,9 @@
             this.lblmois.BackColor = System.Drawing.Color.IndianRed;
             this.lblmois.Location = new System.Drawing.Point(399, 29);
             this.lblmois.Name = "lblmois";
-            this.lblmois.Size = new System.Drawing.Size(108, 13);
+            this.lblmois.Size = new System.Drawing.Size(120, 13);
             this.lblmois.TabIndex = 6;
-            this.lblmois.Text = "Selectionner un mois ";
+            this.lblmois.Text = "Selectionner une année";
             // 
             // btnModif
             // 
@@ -144,14 +144,6 @@
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.IndianRed;
-            this.panel2.Location = new System.Drawing.Point(206, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(582, 74);
-            this.panel2.TabIndex = 0;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.IndianRed;
@@ -159,6 +151,14 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(785, 82);
             this.panel3.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.IndianRed;
+            this.panel2.Location = new System.Drawing.Point(206, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(582, 74);
+            this.panel2.TabIndex = 0;
             // 
             // FormMenuMission3
             // 

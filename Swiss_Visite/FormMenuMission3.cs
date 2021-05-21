@@ -117,17 +117,39 @@ namespace Swiss_Visite
 
         private void cmbMois_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // if (closing == false)
-            // {
+        
 
-            
             Visiteur v2 = Model.rechercheVisiteur(Model.idclient);
-            bsfichefrais.DataSource = ModelMission3.ToutesLesfichesfrais(v2.idVisiteur.ToString());
-            dgvfichesfrais.DataSource = bsfichefrais;
-            dgvfichesfrais.Columns[0].HeaderText = "ID";
-            dgvfichesfrais.Columns[1].HeaderText = "date de modification";
-            dgvfichesfrais.Columns[2].HeaderText = "Mois";
-            // }
+           
+            if (ModelMission3.ToutesLesfichesfrais(v2.idVisiteur.ToString(), cmbMois.SelectedItem.ToString()) != null)
+            {
+              
+                    bsfichefrais.DataSource = ModelMission3.ToutesLesfichesfrais(v2.idVisiteur.ToString(), cmbMois.SelectedIndex.ToString());
+
+                    dgvfichesfrais.DataSource = bsfichefrais[0];
+
+                    for (int i = 0; i < dgvfichesfrais.ColumnCount; i++)
+                    {
+                        dgvfichesfrais.Columns[i].Visible = false;
+                    }
+
+                   
+                    dgvfichesfrais.Columns[0].Visible = true;
+                    dgvfichesfrais.Columns[1].Visible = true;
+                    dgvfichesfrais.Columns[2].Visible = false;
+                    dgvfichesfrais.Columns[3].Visible = false;
+                    dgvfichesfrais.Columns[4].Visible = true;
+                    dgvfichesfrais.Columns[5].Visible = false;
+
+                
+            }
+            else
+
+            {
+                MessageBox.Show("pas de fiches enregistrés pour cette année");
+            }
+
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
