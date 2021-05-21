@@ -56,29 +56,29 @@ namespace Swiss_Visite
 
 
             //frais une Nuite
-            bsNuit.DataSource = ModelMission3.rechercheFraisForfait("NUI");
+            bsNuit.DataSource = Model.rechercheFraisForfait("NUI");
 
             txtMontantNuit.Text = ((FraisForfait)bsNuit[0]).montant.ToString();
             //frais repas midi
-            bsMidi.DataSource = ModelMission3.rechercheFraisForfait("REM");
+            bsMidi.DataSource = Model.rechercheFraisForfait("REM");
 
             txtMontantMidi.Text = ((FraisForfait)bsMidi[0]).montant.ToString();
             //frais repas soir
-            bsSoir.DataSource = ModelMission3.rechercheFraisForfait("RES");
+            bsSoir.DataSource = Model.rechercheFraisForfait("RES");
 
             txtMontantSoir.Text = ((FraisForfait)bsSoir[0]).montant.ToString();
             //frais forfait nuite
-            bsForfaitnuite.DataSource = ModelMission3.rechercheFraisForfait("ETP");
+            bsForfaitnuite.DataSource = Model.rechercheFraisForfait("ETP");
 
             txtMontantForfaitnuite.Text = ((FraisForfait)bsForfaitnuite[0]).montant.ToString();
 
             cboModeDeTransport.ValueMember = "id";//permet de stocker l'identifiant
             cboModeDeTransport.DisplayMember = "libelle";
-            bsModedetransport.DataSource = ModelMission3.recherchefraiskilometrique();
+            bsModedetransport.DataSource = Model.recherchefraiskilometrique();
             cboModeDeTransport.DataSource = bsModedetransport;
 
 
-            bsdgvtransport.DataSource = ModelMission3.ajouterfichefrais(Model.idclient, DateTime.Now.Month.ToString());
+            bsdgvtransport.DataSource = Model.ajouterfichefrais(Model.idclient, DateTime.Now.Month.ToString());
             if (bsdgvtransport == null)
             {
                 int moissansanne = DateTime.ParseExact(cbmois.SelectedItem.ToString(), "MMMM", CultureInfo.CurrentCulture).Month;
@@ -109,35 +109,35 @@ namespace Swiss_Visite
             txtTotalMidi.Text = (double.Parse(numMidi.Value.ToString()) * double.Parse(txtMontantMidi.Text)).ToString();
 
 
-            if (ModelMission3.LignefraisForfaitNUI(v2.idVisiteur.ToString(), mois) != null)
+            if (Model.LignefraisForfaitNUI(v2.idVisiteur.ToString(), mois) != null)
             {
-                bsNuiNum.DataSource = ModelMission3.LignefraisForfaitNUI(v2.idVisiteur.ToString(), mois);
-                numForfaitnuite.Value = int.Parse(((LigneFraisForfait)bsNuiNum[0]).quantite.ToString());
+                bsNuiNum.DataSource = Model.LignefraisForfaitNUI(v2.idVisiteur.ToString(), mois);
+                numNuite.Value = int.Parse(((LigneFraisForfait)bsNuiNum[0]).quantite.ToString());
             }
 
-            if (ModelMission3.LignefraisForfaitNUI(v2.idVisiteur.ToString(), mois) != null)
+            if (Model.LignefraisForfaitREM(v2.idVisiteur.ToString(), mois) != null)
             {
-                bsRemNum.DataSource = ModelMission3.LignefraisForfaitREM(v2.idVisiteur.ToString(), mois);
+                bsRemNum.DataSource = Model.LignefraisForfaitREM(v2.idVisiteur.ToString(), mois);
                 numMidi.Value = int.Parse(((LigneFraisForfait)bsRemNum[0]).quantite.ToString());
             }
 
 
-            if (ModelMission3.LignefraisForfaitNUI(v2.idVisiteur.ToString(), mois) != null)
+            if (Model.LignefraisForfaitRES(v2.idVisiteur.ToString(), mois) != null)
             {
-                bsResNum.DataSource = ModelMission3.LignefraisForfaitRES(v2.idVisiteur.ToString(), mois);
+                bsResNum.DataSource = Model.LignefraisForfaitRES(v2.idVisiteur.ToString(), mois);
                 numSoir.Value = int.Parse(((LigneFraisForfait)bsResNum[0]).quantite.ToString());
             }
 
-            if (ModelMission3.LignefraisForfaitNUI(v2.idVisiteur.ToString(), mois) != null)
+            if (Model.LignefraisForfaitETP(v2.idVisiteur.ToString(), mois) != null)
             {
 
-                bsEtpNum.DataSource = ModelMission3.LignefraisForfaitETP(v2.idVisiteur.ToString(), mois);
-                numNuite.Value = int.Parse(((LigneFraisForfait)bsEtpNum[0]).quantite.ToString());
+                bsEtpNum.DataSource = Model.LignefraisForfaitETP(v2.idVisiteur.ToString(), mois);
+                numForfaitnuite.Value = int.Parse(((LigneFraisForfait)bsEtpNum[0]).quantite.ToString());
             }
 
-            if(ModelMission3.LignefraisForfaitkilometrique(v2.idVisiteur.ToString(), mois) != null)
+            if(Model.LignefraisForfaitkilometrique(v2.idVisiteur.ToString(), mois) != null)
             {
-                bsdgvtransport.DataSource = ModelMission3.LignefraisForfaitkilometrique(v2.idVisiteur.ToString(), mois);
+                bsdgvtransport.DataSource = Model.LignefraisForfaitkilometrique(v2.idVisiteur.ToString(), mois);
                 foreach (LigneFraisForfait l in bsdgvtransport)
                 {
                     
@@ -273,16 +273,18 @@ namespace Swiss_Visite
             }
 
             string date = DateTime.Now.Month + DateTime.Now.Year.ToString();
-            ModelMission3.alterenregnuite(txtMatricule.Text, this.mois, "NUI", numNuite.Value.ToString());
-            ModelMission3.enregmidi(txtMatricule.Text, this.mois, "REM", numMidi.Value.ToString());
-            ModelMission3.enregsoir(txtMatricule.Text, this.mois, "RES", numSoir.Value.ToString());
-            ModelMission3.enregforfnuite(txtMatricule.Text, this.mois, "ETP", numForfaitnuite.Value.ToString());
+            Model.alterenregnuite(txtMatricule.Text, this.mois, "NUI", numNuite.Value.ToString());
+            Model.alterenregmidi(txtMatricule.Text, this.mois, "REM", numMidi.Value.ToString());
+            Model.alterenregsoir(txtMatricule.Text, this.mois, "RES", numSoir.Value.ToString());
+            Model.alterenregforfnuite(txtMatricule.Text, this.mois, "ETP", numForfaitnuite.Value.ToString());
             for (int i = 0; i < dgvfraiskilometriques.Rows.Count - 1; i++)
             {
-                MessageBox.Show(dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
-                MessageBox.Show(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString());
-                ModelMission3.enregfraiskm(txtMatricule.Text, this.mois, ((FraisForfait)ModelMission3.idlignefrais(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString())).id, dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
+                if (dgvfraiskilometriques.RowCount > 0)
+                {
 
+                    MessageBox.Show("L'application ne gere pas la modification des transports pour l'instant");
+                   // Model.alterenregfraiskm(txtMatricule.Text, this.mois, ((FraisForfait)Model.idlignefrais(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString())).id, int.Parse(dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString()));
+                }
             }
             MessageBox.Show("Enregistrement effectue");
 

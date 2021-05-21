@@ -30,7 +30,7 @@ namespace Swiss_Visite
             cmbMois.ValueMember = "id";//permet de stocker l'identifiant
             cmbMois.DisplayMember = "libelle";
 
-           // bsComboMois.DataSource = ModelMission3.recherchefichefrais(v2.idVisiteur.ToString());
+           // bsComboMois.DataSource = Model.recherchefichefrais(v2.idVisiteur.ToString());
            // cmbMois.DataSource = bsComboMois;
     
 
@@ -42,7 +42,7 @@ namespace Swiss_Visite
                cmbMois.Items.Add(i);
             }
 
-            //bsfichefrais.DataSource = ModelMission3.ToutesLesfichesfrais(v2.idVisiteur.ToString());
+            //bsfichefrais.DataSource = Model.ToutesLesfichesfrais(v2.idVisiteur.ToString());
             //dgvfichesfrais.DataSource = bsfichefrais;
             //dgvfichesfrais.Columns[0].HeaderText = "ID";
             //dgvfichesfrais.Columns[1].HeaderText = "date de modification";
@@ -73,7 +73,7 @@ namespace Swiss_Visite
             string matricule = v2.idVisiteur.ToString();
             string date = DateTime.Now.Month + DateTime.Now.Year.ToString();
 
-            ModelMission3.enregfichefrais(matricule, moisanne, "CR", "0");
+            Model.enregfichefrais(matricule, moisanne, "CR", "0");
             
                 
                 System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
@@ -100,7 +100,7 @@ namespace Swiss_Visite
             if (dgvfichesfrais.SelectedRows.Count > 0)
             {
                 //permets de passer la valeur du mois choisi dans le forms VisiteurModifierfraisforfait
-                this.moismodifier = dgvfichesfrais.CurrentRow.Cells[2].Value.ToString();
+                this.moismodifier = dgvfichesfrais.CurrentRow.Cells[1].Value.ToString();
                 MessageBox.Show(this.moismodifier);
                 
                 System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProcVisiteurModifier));
@@ -121,33 +121,25 @@ namespace Swiss_Visite
 
             Visiteur v2 = Model.rechercheVisiteur(Model.idclient);
            
-            if (ModelMission3.ToutesLesfichesfrais(v2.idVisiteur.ToString(), cmbMois.SelectedItem.ToString()) != null)
-            {
+          
+                bsfichefrais.DataSource = Model.ToutesLesfichesfrais(v2.idVisiteur.ToString(), cmbMois.SelectedItem.ToString());
               
-                    bsfichefrais.DataSource = ModelMission3.ToutesLesfichesfrais(v2.idVisiteur.ToString(), cmbMois.SelectedIndex.ToString());
-
-                    dgvfichesfrais.DataSource = bsfichefrais[0];
+                    dgvfichesfrais.DataSource = bsfichefrais;
 
                     for (int i = 0; i < dgvfichesfrais.ColumnCount; i++)
                     {
                         dgvfichesfrais.Columns[i].Visible = false;
                     }
 
-                   
                     dgvfichesfrais.Columns[0].Visible = true;
                     dgvfichesfrais.Columns[1].Visible = true;
                     dgvfichesfrais.Columns[2].Visible = false;
                     dgvfichesfrais.Columns[3].Visible = false;
                     dgvfichesfrais.Columns[4].Visible = true;
                     dgvfichesfrais.Columns[5].Visible = false;
-
                 
-            }
-            else
-
-            {
-                MessageBox.Show("pas de fiches enregistrés pour cette année");
-            }
+          
+              
 
 
         }

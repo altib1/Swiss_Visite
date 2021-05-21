@@ -99,7 +99,7 @@ namespace Swiss_Visite
                 MessageBox.Show(dgvfraisHorsForfait.Rows[i].Cells[0].Value.ToString());
                 MessageBox.Show(dgvfraisHorsForfait.Rows[i].Cells[1].Value.ToString());
                 MessageBox.Show(moisanne);
-                ModelMission3.enregfraishorsforfait(i.ToString(), matricule, this.moisanne, dgvfraisHorsForfait.Rows[i].Cells[0].Value.ToString(), dgvfraisHorsForfait.Rows[i].Cells[1].Value.ToString());
+                Model.enregfraishorsforfait(i.ToString(), matricule, this.moisanne, dgvfraisHorsForfait.Rows[i].Cells[0].Value.ToString(), dgvfraisHorsForfait.Rows[i].Cells[1].Value.ToString());
 
 
             }

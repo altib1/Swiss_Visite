@@ -70,30 +70,30 @@ namespace Swiss_Visite
             MessageBox.Show(this.moisanne);
          
             //frais une Nuite
-            bsNuit.DataSource = ModelMission3.rechercheFraisForfait("NUI");
+            bsNuit.DataSource = Model.rechercheFraisForfait("NUI");
 
             txtMontantNuit.Text = ((FraisForfait)bsNuit[0]).montant.ToString();
             //frais repas midi
-            bsMidi.DataSource = ModelMission3.rechercheFraisForfait("REM");
+            bsMidi.DataSource = Model.rechercheFraisForfait("REM");
 
             txtMontantMidi.Text = ((FraisForfait)bsMidi[0]).montant.ToString();
             //frais repas soir
-            bsSoir.DataSource = ModelMission3.rechercheFraisForfait("RES");
+            bsSoir.DataSource = Model.rechercheFraisForfait("RES");
 
             txtMontantSoir.Text = ((FraisForfait)bsSoir[0]).montant.ToString();
             //frais forfait nuite
-            bsForfaitnuite.DataSource = ModelMission3.rechercheFraisForfait("ETP");
+            bsForfaitnuite.DataSource = Model.rechercheFraisForfait("ETP");
 
             txtMontantForfaitnuite.Text = ((FraisForfait)bsForfaitnuite[0]).montant.ToString();
 
             cboModeDeTransport.ValueMember = "id";//permet de stocker l'identifiant
             cboModeDeTransport.DisplayMember = "libelle";
-            bsModedetransport.DataSource = ModelMission3.recherchefraiskilometrique();
+            bsModedetransport.DataSource = Model.recherchefraiskilometrique();
             cboModeDeTransport.DataSource = bsModedetransport;
 
         
 
-            bsdgvtransport.DataSource = ModelMission3.ajouterfichefrais(Model.idclient,DateTime.Now.Month.ToString());
+            bsdgvtransport.DataSource = Model.ajouterfichefrais(Model.idclient,DateTime.Now.Month.ToString());
             if(bsdgvtransport == null)  
             {
 
@@ -271,17 +271,17 @@ namespace Swiss_Visite
 
 
 
-            ModelMission3.enregfichefrais(txtMatricule.Text, this.moisanne, "CR", "0");
+            Model.enregfichefrais(txtMatricule.Text, this.moisanne, "CR", "0");
             string date = DateTime.Now.Month + DateTime.Now.Year.ToString();
-                ModelMission3.enregnuite(txtMatricule.Text, this.moisanne, "NUI", numNuite.Value.ToString());
-                ModelMission3.enregmidi(txtMatricule.Text, this.moisanne, "REM", numMidi.Value.ToString());
-                ModelMission3.enregsoir(txtMatricule.Text, this.moisanne, "RES", numSoir.Value.ToString());
-                ModelMission3.enregforfnuite(txtMatricule.Text, this.moisanne, "ETP", numForfaitnuite.Value.ToString());
+                Model.enregnuite(txtMatricule.Text, this.moisanne, "NUI", numNuite.Value.ToString());
+                Model.enregmidi(txtMatricule.Text, this.moisanne, "REM", numMidi.Value.ToString());
+                Model.enregsoir(txtMatricule.Text, this.moisanne, "RES", numSoir.Value.ToString());
+                Model.enregforfnuite(txtMatricule.Text, this.moisanne, "ETP", numForfaitnuite.Value.ToString());
                 for (int i = 0; i < dgvfraiskilometriques.Rows.Count - 1; i++)
                 {
                     MessageBox.Show(dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
                     MessageBox.Show(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString());
-                    ModelMission3.enregfraiskm(txtMatricule.Text, this.moisanne, ((FraisForfait)ModelMission3.idlignefrais(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString())).id , dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
+                    Model.enregfraiskm(txtMatricule.Text, this.moisanne, ((FraisForfait)Model.idlignefrais(dgvfraiskilometriques.Rows[i].Cells[1].Value.ToString())).id , dgvfraiskilometriques.Rows[i].Cells[0].Value.ToString());
 
                 }
                 MessageBox.Show("Enregistrement effectue");
@@ -320,7 +320,7 @@ namespace Swiss_Visite
                 this.moisanne = moissansanne.ToString() + DateTime.Now.Year.ToString();
             }
             MessageBox.Show(this.moisanne);
-            ModelMission3.enregfichefrais(txtMatricule.Text, this.moisanne, "CR", "0");
+            Model.enregfichefrais(txtMatricule.Text, this.moisanne, "CR", "0");
             FraisHorsForfait form = new FraisHorsForfait(this.moisanne);
             
             form.Show();
